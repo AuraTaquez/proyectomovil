@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pantalla5" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#409A9696" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="183dp"
+        android:layout_height="92dp"
+        android:background="#CDFFFFFF"
+        android:orientation="vertical"
+        android:translationX="114dp"
+        android:translationY="95dp">
+
+        <ImageView
+            android:id="@+id/imageView16"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_weight="1"
+            android:imageAlignment="center"
+            app:srcCompat="@drawable/logoapp" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="305dp"
+        android:background="#ADAAA6A6"
+        android:orientation="vertical"
+        android:translationY="310dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Inicio de sesion"
+            android:textAlignment="center"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:translationY="24dp"
+            android:textColor="@color/white"
+            app:backgroundTint="#0A163C" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="solo para usuario registrados"
+            android:textAlignment="center"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:translationY="24dp"
+            android:textColor="@color/white"
+            />
+
+        <EditText
+            android:id="@+id/et_usuario"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="#FFFFFF"
+            android:fontFamily="sans-serif"
+            android:hint="Nombre de Usuario"
+            android:inputType="textPersonName"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textAlignment="center"
+            android:textColor="#191818"
+            android:textColorHint="#353434"
+            android:textSize="18sp"
+            android:translationY="30dp" />
+
+        <EditText
+            android:id="@+id/contraseña"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="15dp"
+            android:background="#FFFFFF"
+            android:fontFamily="sans-serif"
+            android:hint="Contraseña"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp"
+            android:paddingTop="10dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="10dp"
+            android:textAlignment="center"
+            android:textColor="#191818"
+            android:textColorHint="#353434"
+            android:textSize="18sp"
+            android:translationY="20dp" />
+
+        <Button
+            android:id="@+id/iniciar_sesion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp"
+            android:background="#045951"
+            android:elevation="5dp"
+            android:fontFamily="sans-serif"
+            android:onClick="@a"
+            android:text="Ingresar"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            android:translationY="20dp"
+            app:backgroundTint="#0A163C" />
+    </LinearLayout>
+
+</RelativeLayout>
+
