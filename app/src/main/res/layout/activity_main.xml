@@ -6,10 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" >
+    </include>
+
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
+        android:layout_marginTop="60dp"
         android:src="@drawable/pantalla5" />
 
 
@@ -19,52 +25,35 @@
         android:background="#409A9696" >
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="183dp"
-        android:layout_height="92dp"
-        android:background="#CDFFFFFF"
-        android:orientation="vertical"
-        android:translationX="114dp"
-        android:translationY="95dp">
-
-        <ImageView
-            android:id="@+id/imageView16"
-            android:layout_width="match_parent"
-            android:layout_height="64dp"
-            android:layout_weight="1"
-            android:imageAlignment="center"
-            app:srcCompat="@drawable/logoapp" />
-    </LinearLayout>
-
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="305dp"
         android:background="#ADAAA6A6"
+        android:gravity="center"
         android:orientation="vertical"
-        android:translationY="310dp">
+        android:translationY="200dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Inicio de sesion"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="24dp"
             android:textStyle="bold"
             android:translationY="24dp"
-            android:textColor="@color/white"
             app:backgroundTint="#0A163C" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="solo para usuario registrados"
+            android:text="solo para usuarios registrados"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="24dp"
             android:textStyle="bold"
-            android:translationY="24dp"
-            android:textColor="@color/white"
-            />
+            android:translationY="24dp" />
 
         <EditText
             android:id="@+id/et_usuario"
