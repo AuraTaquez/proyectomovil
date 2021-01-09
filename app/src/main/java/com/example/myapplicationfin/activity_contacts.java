@@ -66,10 +66,10 @@ public class activity_contacts extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                adpParticipante adpCreditos = new adpParticipante(finalLista);
-                rcvParticipantes.setAdapter(adpCreditos);
-                adpCreditos.showShimmer = false;
-                adpCreditos.notifyDataSetChanged();
+                adpParticipante adpParticipantes = new adpParticipante(finalLista);
+                rcvParticipantes.setAdapter(adpParticipantes);
+                adpParticipantes.showShimmer = false;
+                adpParticipantes.notifyDataSetChanged();
             }
         }, 1000);
     }

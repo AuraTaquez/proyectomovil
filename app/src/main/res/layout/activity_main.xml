@@ -19,7 +19,6 @@
         android:layout_marginTop="60dp"
         android:src="@drawable/pantalla5" />
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="305dp"
@@ -107,6 +106,7 @@
             android:textSize="16sp"
             android:translationY="20dp"
             app:backgroundTint="#0A163C" />
+
     </LinearLayout>
 
 </RelativeLayout>

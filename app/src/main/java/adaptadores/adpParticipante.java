@@ -23,7 +23,6 @@ public class adpParticipante extends RecyclerView.Adapter<adpParticipante.ViewHo
 
     public static boolean showShimmer = true;
     int cantShimmer = 8;
-    private View.OnClickListener listener;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ShimmerFrameLayout shimmerFrameLayout;
