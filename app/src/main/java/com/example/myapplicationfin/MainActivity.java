@@ -66,17 +66,17 @@ public class MainActivity extends AppCompatActivity {
     {
         if(tipo.equals("A"))
         {
-            Intent intent = new Intent(this, admin.class);
+            Intent intent = new Intent(this, admin.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
         else if (tipo.equals("T"))
         {
-            Intent intent = new Intent(this, terapeuta.class);
+            Intent intent = new Intent(this, terapeuta.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
         else if (tipo.equals("P"))
         {
-            Intent intent = new Intent(this, paciente.class);
+            Intent intent = new Intent(this, paciente.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
     }
