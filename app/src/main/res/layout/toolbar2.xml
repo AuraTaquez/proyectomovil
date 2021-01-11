@@ -5,16 +5,18 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:background="#999999"
-    android:theme="?attr/actionBarTheme"
+    android:background="#0180DF"
+    android:elevation="4dp"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="@style/Toolbar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="150dp"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:translationX="-16dp"
-        app:srcCompat="@drawable/logoapp"
+        app:srcCompat="@drawable/logsriot"
         tools:layout_editor_absoluteX="16dp" />
 
 </androidx.appcompat.widget.Toolbar>

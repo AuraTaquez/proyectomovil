@@ -9,7 +9,8 @@
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/toolbar"></include>
+        layout="@layout/toolbar">
+    </include>
 
     <ImageView
         android:layout_width="match_parent"
