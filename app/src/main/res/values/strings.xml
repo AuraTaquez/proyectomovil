@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">My Application fin</string>
+
+    <string name="Cedula">Cédula</string>
+    <string name="Nombres">Nombres</string>
+    <string name="Apellidos">Apellidos</string>
+    <string name="Direccion">Dirección</string>
+    <string name="Email">E-mail</string>
+    <string name="Telefono">Teléfono</string>
+    <string name="FechaNacimiento">Fecha de Nacimiento</string>
 </resources>
