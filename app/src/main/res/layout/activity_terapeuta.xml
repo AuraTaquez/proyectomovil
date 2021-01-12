@@ -8,20 +8,22 @@
     tools:context=".terapeuta">
 
     <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar"></include>
+        android:id="@+id/toolbar2"
+        layout="@layout/toolbar2"></include>
+
 
     <TextView
         android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+
         android:text="Actividades Terapeuta"
-        android:textColor="@color/cardview_dark_background"
+        android:textColor="#0180DF"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 
     <TextView
         android:id="@+id/txtRegistrarPaciente"
