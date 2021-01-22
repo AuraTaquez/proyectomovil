@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">My Application fin</string>
+    <string name="Administrador">ADMINISTRADOR</string>
+    <string name="Cedula">1205436749</string>
+    <string name="Nombres">Aura Oliva Taquez Suarez</string>
+    <string name="Contraseña">Aura 2020</string>
+    <string name="Direccion">Santo Domingo</string>
+    <string name="Email">Auri291@hotmail.com</string>
+    <string name="Telefono">0978895730</string>
 
-    <string name="Cedula">Cédula</string>
-    <string name="Nombres">Nombres</string>
-    <string name="Apellidos">Apellidos</string>
-    <string name="Direccion">Dirección</string>
-    <string name="Email">E-mail</string>
-    <string name="Telefono">Teléfono</string>
-    <string name="FechaNacimiento">Fecha de Nacimiento</string>
 </resources>

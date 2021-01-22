@@ -18,24 +18,6 @@ public class terapeuta extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_terapeuta);
-
-        ImageButton info = findViewById(R.id.btnRegistrarPaciente);
-        info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), registrar_paciente.class);
-                startActivityForResult(intent, 0);
-            }
-        });
-
-        TextView registrarPaciente = findViewById(R.id.txtRegistrarPaciente);
-        registrarPaciente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent (v.getContext(), registrar_paciente.class);
-                startActivityForResult(intent, 0);
-            }
-        });
-
     }
+
 }

@@ -46,7 +46,8 @@ public class paciente extends AppCompatActivity implements
         fragment = null;
         switch (menuItem.getItemId()) {
             case R.id.Pmenu_seccion_1:
-
+                drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout_paciente);
+                drawerLayout.openDrawer(GravityCompat.START);
                 break;
             case R.id.Pmenu_seccion_2:
 

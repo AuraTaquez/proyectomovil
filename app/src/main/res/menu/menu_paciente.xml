@@ -10,5 +10,12 @@
         <item android:title="Ver Avances"
             android:id="@+id/Pmenu_seccion_3"
             android:icon="@drawable/icon_veravances" />
+        <ImageView
+            android:id="@+id/imgperfil"
+            android:layout_width="wrap_content"
+            android:layout_height="184dp"
+            android:background="#C3DDF0"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logooperfil" />
     </group>
 </menu>
