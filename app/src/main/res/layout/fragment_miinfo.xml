@@ -99,6 +99,78 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <TextView
+                    android:id="@+id/fechanac"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="210dp"
+                    android:background="@drawable/round_border"
+                    android:drawableStart="@drawable/ic_cedula"
+                    android:drawablePadding="16dp"
+                    android:ems="10"
+                    android:hint="FECHA NACIMIENTO USUARIO"
+                    android:inputType="textPersonName"
+                    android:padding="16dp"
+                    android:textColorHint="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/genero"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="280dp"
+                    android:background="@drawable/round_border"
+                    android:drawableStart="@drawable/ic_cedula"
+                    android:drawablePadding="16dp"
+                    android:ems="10"
+                    android:hint="GÉNERO USUARIO"
+                    android:inputType="textPersonName"
+                    android:padding="16dp"
+                    android:textColorHint="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/usuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="350dp"
+                    android:background="@drawable/round_border"
+                    android:drawableStart="@drawable/ic_cedula"
+                    android:drawablePadding="16dp"
+                    android:ems="10"
+                    android:hint="USUARIO"
+                    android:inputType="textPersonName"
+                    android:padding="16dp"
+                    android:textColorHint="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/clave"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="420dp"
+                    android:background="@drawable/round_border"
+                    android:drawableStart="@drawable/ic_cedula"
+                    android:drawablePadding="16dp"
+                    android:ems="10"
+                    android:hint="CLAVE"
+                    android:inputType="textPersonName"
+                    android:padding="16dp"
+                    android:textColorHint="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
             </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
