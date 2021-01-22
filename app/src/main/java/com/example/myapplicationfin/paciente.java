@@ -11,11 +11,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.material.navigation.NavigationView;
-
-import fragments.fragment_miinfo;
 
 public class paciente extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -25,7 +22,6 @@ public class paciente extends AppCompatActivity implements
     Toolbar toolbar;
     Fragment fragment;
     boolean fragmentTransaction;
-    MenuItem mn;
 
     //color de fondo de imagen: #C3DDF0
 
@@ -41,10 +37,6 @@ public class paciente extends AppCompatActivity implements
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         navView = findViewById(R.id.nav_view);
-
-        Menu m = navView.getMenu();
-        m.removeItem(R.id.Umenu_seccion_3);
-        m.findItem(R.id.Umenu_seccion_2).setIcon(R.drawable.icon_veravances).setTitle("Mis Terapias");
         navView.setNavigationItemSelectedListener(this);
     }
 
@@ -53,11 +45,14 @@ public class paciente extends AppCompatActivity implements
         fragmentTransaction = false;
         fragment = null;
         switch (menuItem.getItemId()) {
-            case R.id.Umenu_seccion_1:
-                fragment = new fragment_miinfo();
-                fragmentTransaction = true;
+            case R.id.Pmenu_seccion_1:
+                drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout_paciente);
+                drawerLayout.openDrawer(GravityCompat.START);
                 break;
-            case R.id.Umenu_seccion_2:
+            case R.id.Pmenu_seccion_2:
+
+                break;
+            case R.id.Pmenu_seccion_3:
 
                 break;
         }
@@ -72,9 +67,7 @@ public class paciente extends AppCompatActivity implements
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_toolbar_usuario,menu);
-        MenuItem m = menu.findItem(R.id.btnTipo);
-        m.setTitle("PACIENTE");
+        getMenuInflater().inflate(R.menu.menu_toolbar_paciente,menu);
         return true;
     }
 
