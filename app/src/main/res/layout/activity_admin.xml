@@ -6,20 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".admin">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
     <include
-        android:id="@+id/toolbarazul"
-        layout="@layout/toolbarazul">
+        android:id="@+id/toolbar_admin"
+        layout="@layout/toolbar2">
     </include>
+
         <FrameLayout
             android:id="@+id/contenido_administrador"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
               </FrameLayout>
+
     </LinearLayout>
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_viewadmin"
         android:layout_width="wrap_content"
@@ -30,8 +35,9 @@
         app:headerLayout="@layout/header"
         app:itemIconTint="#FFFFFF"
         app:itemTextColor="#FFFFFF"
-        app:menu="@menu/m_izquierdo_adm"
+        app:menu="@menu/menu_navview"
         android:theme="@style/NavView"
         tools:ignore="MissingConstraints">
     </com.google.android.material.navigation.NavigationView>
+
     </androidx.drawerlayout.widget.DrawerLayout>

@@ -6,14 +6,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -30,15 +27,19 @@ public class admin extends AppCompatActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
 
-        toolbar1 = findViewById(R.id.toolbarazul);
+        toolbar1 = findViewById(R.id.toolbar_admin);
         setSupportActionBar(toolbar1);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.icon_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         navView = findViewById(R.id.nav_viewadmin);
+        Menu m = navView.getMenu();
+        m.findItem(R.id.Umenu_seccion_2).setIcon(R.drawable.icon_veravances).setTitle("Terapeutas");
+        m.findItem(R.id.Umenu_seccion_3).setIcon(R.drawable.icon_veravances).setTitle("Dispositivos");
         navView.setNavigationItemSelectedListener(this);
-          }
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         fragmentTransaction = false;
@@ -46,15 +47,15 @@ public class admin extends AppCompatActivity implements
         fragment = null;
 
         switch (menuItem.getItemId()) {
-            case R.id.Pmenu_admin_1:
+            case R.id.Umenu_seccion_1:
 
 
                 break;
-            case R.id.Pmenu_admin_2:
+            case R.id.Umenu_seccion_2:
 
 
                 break;
-            case R.id.Pmenu_admin_3:
+            case R.id.Umenu_seccion_3:
 
                 break;
             default:
@@ -70,7 +71,9 @@ public class admin extends AppCompatActivity implements
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menuadmin) {
-        getMenuInflater().inflate(R.menu.menutoolbaradmin,menuadmin);
+        getMenuInflater().inflate(R.menu.menu_toolbar2,menuadmin);
+        MenuItem m = menuadmin.findItem(R.id.btnTipo);
+        m.setTitle("ADMINISTRADOR");
         return true;
     }
     @Override
@@ -82,10 +85,10 @@ public class admin extends AppCompatActivity implements
                 drawerLayout.openDrawer(GravityCompat.START);
                 break;
         }
-        if(id == R.id.btnCerrraradmin) {
+        if(id == R.id.btnCerrarSesion) {
             Intent intent = new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
-        }
+}

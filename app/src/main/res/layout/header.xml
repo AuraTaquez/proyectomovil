@@ -7,7 +7,7 @@
     <ImageView
         android:id="@+id/imgFondo"
         android:layout_width="match_parent"
-        android:layout_height="105dp"
+        android:layout_height="195dp"
         android:background="#C3DDF0"
         android:scaleType="fitCenter"
         android:src="@drawable/logoapp" />
