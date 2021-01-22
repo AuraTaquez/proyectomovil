@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/btnTipo"
-        android:title="Paciente"
+        android:title=""
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/btnCerrarSesion"
