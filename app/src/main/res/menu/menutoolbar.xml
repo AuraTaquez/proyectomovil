@@ -9,7 +9,7 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/btnContactos"
-        android:icon="@drawable/icon_contact"
+        android:icon="@drawable/icon_contacts"
         android:title="Contactos"
         app:showAsAction="ifRoom" />
 

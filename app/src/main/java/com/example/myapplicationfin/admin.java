@@ -14,6 +14,8 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
+import fragments.fragment_miinfo;
+
 public class admin extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
     DrawerLayout drawerLayout;
@@ -35,8 +37,8 @@ public class admin extends AppCompatActivity implements
 
         navView = findViewById(R.id.nav_viewadmin);
         Menu m = navView.getMenu();
-        m.findItem(R.id.Umenu_seccion_2).setIcon(R.drawable.icon_veravances).setTitle("Terapeutas");
-        m.findItem(R.id.Umenu_seccion_3).setIcon(R.drawable.icon_veravances).setTitle("Dispositivos");
+        m.findItem(R.id.Umenu_seccion_2).setIcon(R.drawable.icon_terapeutas).setTitle("Terapeutas");
+        m.findItem(R.id.Umenu_seccion_3).setIcon(R.drawable.icon_dispositivos).setTitle("Dispositivos");
         navView.setNavigationItemSelectedListener(this);
     }
 
@@ -48,8 +50,8 @@ public class admin extends AppCompatActivity implements
 
         switch (menuItem.getItemId()) {
             case R.id.Umenu_seccion_1:
-
-
+                fragment = new fragment_miinfo();
+                fragmentTransaction = true;
                 break;
             case R.id.Umenu_seccion_2:
 

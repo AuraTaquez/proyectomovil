@@ -38,6 +38,12 @@
         app:menu="@menu/menu_navview"
         android:theme="@style/NavView"
         tools:ignore="MissingConstraints">
+
+        <include
+            android:id="@+id/footer_admin"
+            layout="@layout/footer">
+        </include>
+
     </com.google.android.material.navigation.NavigationView>
 
     </androidx.drawerlayout.widget.DrawerLayout>

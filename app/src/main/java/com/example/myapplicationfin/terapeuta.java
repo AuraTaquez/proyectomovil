@@ -45,7 +45,7 @@ public class terapeuta extends AppCompatActivity implements
 
         navView = findViewById(R.id.nav_view_terapeuta);
         Menu m = navView.getMenu();
-        m.findItem(R.id.Umenu_seccion_2).setIcon(R.drawable.icon_veravances).setTitle("Pacientes");
+        m.findItem(R.id.Umenu_seccion_2).setIcon(R.drawable.icon_pacientes).setTitle("Pacientes");
         m.findItem(R.id.Umenu_seccion_3).setIcon(R.drawable.icon_veravances).setTitle("Prescripciones");
         navView.setNavigationItemSelectedListener(this);
     }
@@ -56,7 +56,8 @@ public class terapeuta extends AppCompatActivity implements
         fragment = null;
         switch (item.getItemId()) {
             case R.id.Umenu_seccion_1:
-
+                fragment = new fragment_miinfo();
+                fragmentTransaction = true;
                 break;
             case R.id.Umenu_seccion_2:
 
