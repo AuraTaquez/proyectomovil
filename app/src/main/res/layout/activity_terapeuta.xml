@@ -28,114 +28,114 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/txtTitulo"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:text="Actividades Terapeuta"
-                android:textColor="#0180DF"
-                android:textSize="30sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+                <TextView
+                    android:id="@+id/txtTitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="Actividades Terapeuta"
+                    android:textColor="#0180DF"
+                    android:textSize="30sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
 
-            <TextView
-                android:id="@+id/txtRegistrarPaciente"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="85dp"
-                android:text="Registrar Paciente"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.691"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+                <TextView
+                    android:id="@+id/txtRegistrarPaciente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="85dp"
+                    android:text="Registrar Paciente"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.691"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
 
-            <TextView
-                android:id="@+id/txtTitulo3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Asignar Terapia"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toTopOf="@+id/txtTitulo4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.607"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtRegistrarPaciente" />
+                <TextView
+                    android:id="@+id/txtTitulo3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Asignar Terapia"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toTopOf="@+id/txtTitulo4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.607"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtRegistrarPaciente" />
 
-            <TextView
-                android:id="@+id/txtTitulo4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="85dp"
-                android:text="Pendientes"
-                android:textColor="@color/black"
-                android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.503"
-                app:layout_constraintStart_toStartOf="parent" />
+                <TextView
+                    android:id="@+id/txtTitulo4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="85dp"
+                    android:text="Pendientes"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.503"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-            <ImageButton
-                android:id="@+id/btnRegistrarPaciente"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="77dp"
-                app:layout_constraintEnd_toStartOf="@+id/txtRegistrarPaciente"
-                app:layout_constraintHorizontal_bias="0.819"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
-                app:srcCompat="@android:drawable/ic_menu_save" />
+                <ImageButton
+                    android:id="@+id/btnRegistrarPaciente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="77dp"
+                    app:layout_constraintEnd_toStartOf="@+id/txtRegistrarPaciente"
+                    app:layout_constraintHorizontal_bias="0.819"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+                    app:srcCompat="@android:drawable/ic_menu_save" />
 
-            <ImageButton
-                android:id="@+id/imageButton8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="77dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/txtTitulo4"
-                app:layout_constraintHorizontal_bias="0.846"
-                app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@android:drawable/ic_menu_agenda" />
+                <ImageButton
+                    android:id="@+id/imageButton8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="77dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/txtTitulo4"
+                    app:layout_constraintHorizontal_bias="0.846"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:srcCompat="@android:drawable/ic_menu_agenda" />
 
-            <ImageButton
-                android:id="@+id/imageButton9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toTopOf="@+id/imageButton8"
-                app:layout_constraintEnd_toStartOf="@+id/txtTitulo3"
-                app:layout_constraintHorizontal_bias="0.827"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnRegistrarPaciente"
-                app:layout_constraintVertical_bias="0.49"
-                app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+                <ImageButton
+                    android:id="@+id/imageButton9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toTopOf="@+id/imageButton8"
+                    app:layout_constraintEnd_toStartOf="@+id/txtTitulo3"
+                    app:layout_constraintHorizontal_bias="0.827"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btnRegistrarPaciente"
+                    app:layout_constraintVertical_bias="0.49"
+                    app:srcCompat="@android:drawable/ic_menu_my_calendar" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName"
-                android:layout_width="333dp"
-                android:layout_height="44dp"
-                android:ems="10"
-                android:enabled="false"
-                android:inputType="textPersonName"
-                app:layout_constraintBottom_toTopOf="@+id/txtTitulo3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtRegistrarPaciente" />
+                <EditText
+                    android:id="@+id/editTextTextPersonName"
+                    android:layout_width="333dp"
+                    android:layout_height="44dp"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toTopOf="@+id/txtTitulo3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtRegistrarPaciente" />
 
-            <EditText
-                android:id="@+id/editTextTextPersonName2"
-                android:layout_width="333dp"
-                android:layout_height="44dp"
-                android:ems="10"
-                android:enabled="false"
-                android:inputType="textPersonName"
-                app:layout_constraintBottom_toTopOf="@+id/txtTitulo4"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtTitulo3" />
+                <EditText
+                    android:id="@+id/editTextTextPersonName2"
+                    android:layout_width="333dp"
+                    android:layout_height="44dp"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:inputType="textPersonName"
+                    app:layout_constraintBottom_toTopOf="@+id/txtTitulo4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTitulo3" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

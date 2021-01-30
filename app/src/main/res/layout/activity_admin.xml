@@ -12,16 +12,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <include
-        android:id="@+id/toolbar_admin"
-        layout="@layout/toolbar2">
-    </include>
+        <include
+            android:id="@+id/toolbar_admin"
+            layout="@layout/toolbar2">
+        </include>
 
         <FrameLayout
             android:id="@+id/contenido_administrador"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-              </FrameLayout>
+        </FrameLayout>
 
     </LinearLayout>
 
@@ -46,4 +46,4 @@
 
     </com.google.android.material.navigation.NavigationView>
 
-    </androidx.drawerlayout.widget.DrawerLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

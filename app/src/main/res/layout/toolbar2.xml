@@ -19,4 +19,5 @@
         android:translationX="-16dp"
         app:srcCompat="@drawable/logsriot"
         tools:layout_editor_absoluteX="16dp" />
+
 </androidx.appcompat.widget.Toolbar>

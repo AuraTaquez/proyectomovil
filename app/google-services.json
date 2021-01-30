@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "923046089308",
+    "firebase_url": "https://rehabilitacioniot-a9f5a-default-rtdb.firebaseio.com",
+    "project_id": "rehabilitacioniot-a9f5a",
+    "storage_bucket": "rehabilitacioniot-a9f5a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923046089308:android:4f6790522d4ec33033cc99",
+        "android_client_info": {
+          "package_name": "com.example.myapplicationfin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923046089308-lr242iv8u4i7tr81q0e7i30mvo9u87ae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9Bw34-_xdzpQ_2eWmkTiJnr9yEd60OtU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923046089308-lr242iv8u4i7tr81q0e7i30mvo9u87ae.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

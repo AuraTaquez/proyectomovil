@@ -6,11 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".registrar_paciente">
 
-
     <include
         android:id="@+id/toolbar2"
-        layout="@layout/toolbar2"></include>
-
-
+        layout="@layout/toolbar2">
+    </include>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

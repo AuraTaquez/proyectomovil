@@ -33,8 +33,9 @@
             android:layout_marginStart="85dp"
             android:layout_marginTop="10dp"
             android:layout_toStartOf="@+id/textView"
-            android:tint="#FFFFFF"
-            app:srcCompat="@drawable/icon_info" />
+            app:tint="#FFFFFF"
+            app:srcCompat="@drawable/icon_info"
+            tools:ignore="VectorDrawableCompat" />
 
         <TextView
             android:id="@+id/textView"
@@ -75,8 +76,9 @@
                     android:layout_height="21dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="4dp"
-                    android:tint="#C7C7C7"
-                    app:srcCompat="@drawable/icon_info" />
+                    app:tint="#C7C7C7"
+                    app:srcCompat="@drawable/icon_info"
+                    tools:ignore="VectorDrawableCompat"/>
 
                 <com.codesgood.views.JustifiedTextView
                     android:id="@+id/txtIn"
@@ -153,7 +155,8 @@
                     android:layout_height="21dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="4dp"
-                    app:srcCompat="@drawable/icon_copyright" />
+                    app:srcCompat="@drawable/icon_copyright"
+                    tools:ignore="VectorDrawableCompat" />
 
                 <TextView
                     android:id="@+id/txtMen"

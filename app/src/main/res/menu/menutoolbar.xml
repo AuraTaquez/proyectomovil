@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" >
-
     <item
         android:id="@+id/btnInformacion"
         android:icon="@drawable/icon_info"
@@ -12,5 +11,4 @@
         android:icon="@drawable/icon_contacts"
         android:title="Contactos"
         app:showAsAction="ifRoom" />
-
 </menu>

@@ -55,7 +55,6 @@ public class admin extends AppCompatActivity implements
                 break;
             case R.id.Umenu_seccion_2:
 
-
                 break;
             case R.id.Umenu_seccion_3:
 

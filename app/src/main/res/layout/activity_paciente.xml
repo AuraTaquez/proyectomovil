@@ -15,12 +15,14 @@
 
         <include
             android:id="@+id/toolbar_paciente"
-            layout="@layout/toolbar2"></include>
+            layout="@layout/toolbar2">
+        </include>
 
         <FrameLayout
             android:id="@+id/contenido_paciente"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"></FrameLayout>
+            android:layout_height="match_parent">
+        </FrameLayout>
 
     </LinearLayout>
 
