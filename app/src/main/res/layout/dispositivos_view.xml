@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtviewMAC_"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:text="  MAC :"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtviewMAC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="mac..."
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtviewDispositivo_"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:text="  Dispositivo :"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtviewDispositivo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="dispositivo..."
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtviewEstado_"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:text="  Estado :"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtviewEstado"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="estado..."
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtviewObservaciones_"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:text="  Observaciones:"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/txtviewObservaciones"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="observaciones..."
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="?android:attr/listDivider" />
+
+
+</LinearLayout>
