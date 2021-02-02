@@ -30,7 +30,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Inicio de sesion"
+            android:text="INICIO DE SESIÓN"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="24dp"
@@ -41,7 +41,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="solo para usuarios registrados"
+            android:text="Solo usuarios registrados"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="24dp"
@@ -79,7 +79,7 @@
             android:background="#FFFFFF"
             android:fontFamily="sans-serif"
             android:hint="Contraseña"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:paddingLeft="20dp"
             android:paddingTop="10dp"
             android:paddingRight="10dp"

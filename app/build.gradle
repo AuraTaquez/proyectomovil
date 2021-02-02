@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.myapplicationfin"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -35,11 +35,6 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
-    implementation platform('com.google.firebase:firebase-bom:26.3.0')
-    implementation 'com.google.firebase:firebase-analytics'
-    implementation 'com.google.firebase:firebase-database:19.6.0'
-
-
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
@@ -47,8 +42,6 @@ dependencies {
 
     implementation 'com.facebook.shimmer:shimmer:0.4.0'
     implementation 'com.codesgood:justifiedtextview:1.1.0'
+    implementation 'com.google.firebase:firebase-database:19.6.0'
+    implementation 'com.google.firebase:firebase-firestore:22.0.2'
 }
-
-
-apply plugin: 'com.android.application'
-apply plugin: 'com.google.gms.google-services'
