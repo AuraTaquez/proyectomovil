@@ -40,8 +40,9 @@
         <View
             android:id="@+id/divider2"
             android:layout_width="match_parent"
-            android:layout_height="3dp"
-            android:background="?android:attr/listDivider" />
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            android:foreground="@color/black"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvDispositivos"
