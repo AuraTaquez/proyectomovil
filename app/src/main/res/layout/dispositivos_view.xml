@@ -16,7 +16,8 @@
             android:layout_height="match_parent"
             android:text="  MAC :"
             android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textColor="@color/black"
+             />
 
         <TextView
             android:id="@+id/txtviewMAC"
@@ -38,7 +39,7 @@
             android:layout_height="match_parent"
             android:text="  Dispositivo :"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/txtviewDispositivo"
@@ -60,7 +61,7 @@
             android:layout_height="match_parent"
             android:text="  Estado :"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/txtviewEstado"
@@ -82,7 +83,7 @@
             android:layout_height="match_parent"
             android:text="  Observaciones:"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/txtviewObservaciones"
@@ -96,8 +97,9 @@
     <View
         android:id="@+id/divider"
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="?android:attr/listDivider" />
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:foreground="@color/black"/>
 
 
 </LinearLayout>
