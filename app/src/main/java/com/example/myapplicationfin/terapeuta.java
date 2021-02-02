@@ -62,7 +62,7 @@ public class terapeuta extends AppCompatActivity implements
         if(fragmentTransaction) {
             getSupportFragmentManager().beginTransaction().replace(R.id.contenido_terapeuta, fragment).commit();
             item.setChecked(true);
-            getSupportActionBar().setTitle(item.getTitle());
+            getSupportActionBar().setTitle("");
         }
         drawerLayout.closeDrawers();
         return true;

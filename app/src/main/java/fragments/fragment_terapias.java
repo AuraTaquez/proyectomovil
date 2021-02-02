@@ -4,6 +4,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,11 +15,12 @@ import com.example.myapplicationfin.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link fragment_miinfo#newInstance} factory method to
+ * Use the {@link fragment_terapias#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_miinfo extends Fragment {
+public class fragment_terapias extends Fragment {
 
+    RecyclerView rcvTerapias;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -27,7 +30,7 @@ public class fragment_miinfo extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_miinfo() {
+    public fragment_terapias() {
         // Required empty public constructor
     }
 
@@ -37,11 +40,11 @@ public class fragment_miinfo extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment fragment_miinfo.
+     * @return A new instance of fragment fragment_terapias.
      */
     // TODO: Rename and change types and number of parameters
-    public static fragment_miinfo newInstance(String param1, String param2) {
-        fragment_miinfo fragment = new fragment_miinfo();
+    public static fragment_terapias newInstance(String param1, String param2) {
+        fragment_terapias fragment = new fragment_terapias();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,7 +64,13 @@ public class fragment_miinfo extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_miinfo, container, false);
+        View view = inflater.inflate(R.layout.fragment_terapias, container, false);
+
+        //Vincular instancia del recyclerview
+        rcvTerapias = (RecyclerView)view.findViewById(R.id.rcvTerapias);
+        //Definir la forma de la lista vertical
+        rcvTerapias.setLayoutManager(new LinearLayoutManager(getContext()));
+        // Inflate the layout for this fragment
         return view;
     }
 }

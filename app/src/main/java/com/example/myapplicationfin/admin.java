@@ -65,7 +65,7 @@ public class admin extends AppCompatActivity implements
         if (fragmentTransaction) {
             getSupportFragmentManager().beginTransaction().replace(R.id.contenido_administrador, fragment).commit();
             menuItem.setChecked(true);
-            getSupportActionBar().setTitle(menuItem.getTitle());
+            getSupportActionBar().setTitle("");
         }
         drawerLayout.closeDrawers();
         return true;

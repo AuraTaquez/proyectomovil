@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 
 import fragments.fragment_miinfo;
+import fragments.fragment_terapias;
 
 public class paciente extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -53,13 +54,14 @@ public class paciente extends AppCompatActivity implements
                 fragmentTransaction = true;
                 break;
             case R.id.Umenu_seccion_2:
-
+                fragment = new fragment_terapias();
+                fragmentTransaction = true;
                 break;
         }
         if(fragmentTransaction) {
             getSupportFragmentManager().beginTransaction().replace(R.id.contenido_paciente, fragment).commit();
             menuItem.setChecked(true);
-            getSupportActionBar().setTitle(menuItem.getTitle());
+            getSupportActionBar().setTitle("");
         }
         drawerLayout.closeDrawers();
         return true;

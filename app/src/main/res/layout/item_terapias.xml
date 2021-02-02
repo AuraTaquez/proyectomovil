@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewTerapias"
+        style="@style/CardView.Light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dp">
+
+            <ImageView
+                android:id="@+id/imgDispositivo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/icon_dispositivos"
+                app:layout_constraintDimensionRatio="H,16:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lblTipoTerapia"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgDispositivo"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Tipo de Terapia:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtTipoTerapia"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/imgDispositivo"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/lblTipoTerapia"
+                android:text="Tipo de Terapia" />
+
+            <TextView
+                android:id="@+id/lblDispositivo"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblTipoTerapia"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Dispositivo:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtDispositivo"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtTipoTerapia"
+                android:layout_toEndOf="@+id/lblDispositivo"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Dispositivo" />
+
+            <TextView
+                android:id="@+id/lblFecha"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblDispositivo"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Fecha:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtFecha"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtDispositivo"
+                android:layout_toEndOf="@+id/lblFecha"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Fecha" />
+
+            <TextView
+                android:id="@+id/lblAciertos"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblFecha"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Aciertos:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtAciertos"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtFecha"
+                android:layout_toEndOf="@+id/lblAciertos"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Aciertos" />
+
+            <TextView
+                android:id="@+id/lblHoraInicio"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblAciertos"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Hora Inicio:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtHoraInicio"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtAciertos"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/lblHoraInicio"
+                android:text="Hora Inicio" />
+
+            <TextView
+                android:id="@+id/lblHoraFin"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lblHoraInicio"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="Hora Fin:"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/txtHoraFin"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtHoraInicio"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/lblHoraFin"
+                android:text="Hora Fin" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

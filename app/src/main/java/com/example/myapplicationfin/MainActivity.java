@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         btnIniciar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String tipo = "T";
+                String tipo = "P";
                 iniciar(tipo);
             }
         });
