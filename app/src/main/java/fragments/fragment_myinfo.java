@@ -3,14 +3,21 @@ package fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.myapplicationfin.R;
+import com.example.myapplicationfin.activity_patient;
+
 public class fragment_myinfo extends Fragment {
 
+    TextView txtid, txtaddress, txtbirthdate, txtcid, txtemail, txtpass, txtnames, txtphone, txtrole;
+    String id="", address="", birthdate="", cid="", email="", pass = "", names="", surnames="", phone="", role = "";
+    TextView txtPass;
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -44,6 +51,35 @@ public class fragment_myinfo extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_myinfo, container, false);
+        txtaddress = (TextView) view.findViewById(R.id.address);
+        txtbirthdate = (TextView) view.findViewById(R.id.birthdate);
+        txtcid = (TextView) view.findViewById(R.id.cid);
+        txtemail = (TextView) view.findViewById(R.id.email);
+        txtpass = (TextView) view.findViewById(R.id.password);
+        txtnames = (TextView) view.findViewById(R.id.names_surnames);
+        txtphone = (TextView) view.findViewById(R.id.phone);
+        txtrole = (TextView) view.findViewById(R.id.role);
+        viewData();
         return view;
+    }
+
+    public void viewData(){
+        address = this.getArguments().getString("address");
+        birthdate = this.getArguments().getString("birthdate");
+        cid = this.getArguments().getString("cid");
+        email = this.getArguments().getString("email");
+        pass = this.getArguments().getString("pass");
+        names = this.getArguments().getString("names") + " " + this.getArguments().getString("surnames");
+        phone = this.getArguments().getString("phone");
+        role = this.getArguments().getString("role");
+
+        txtaddress.setHint(address);
+        txtbirthdate.setHint(birthdate);
+        txtcid.setHint(cid);
+        txtemail.setHint(email);
+        txtpass.setHint(pass);
+        txtnames.setHint(names);
+        txtphone.setHint(phone);
+        txtrole.setHint(role);
     }
 }

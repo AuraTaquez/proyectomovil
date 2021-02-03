@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     CollectionReference refcollection = db.collection("users");
     public ArrayList<UserModel> datauser = new ArrayList<>();
+    Bundle b = new Bundle();
     Toolbar toolbar;
     TextView txtUser;
     TextView txtPass;
@@ -53,46 +54,50 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!txtUser.getText().toString().isEmpty() && !txtPass.getText().toString().isEmpty()) {
-                    refcollection.whereEqualTo("email", txtUser.getText().toString())
-                            .addSnapshotListener(new EventListener<QuerySnapshot>() {
-                                @Override
-                                public void onEvent(@Nullable QuerySnapshot snapshots, @Nullable FirebaseFirestoreException error) {
-                                    if (error != null) {
-                                        System.err.println("Query error: " + error);
-                                        Toast.makeText(MainActivity.this, "Query error: " + error, Toast.LENGTH_LONG).show();
-                                        return;
-                                    }
-                                    int count = 0;
-                                    for (DocumentChange doc : snapshots.getDocumentChanges()) {
-                                        count++;
-                                        id=doc.getDocument().getId();
-                                        address = doc.getDocument().get("address").toString();
-                                        birthdate = doc.getDocument().get("birthdate").toString();
-                                        cid = doc.getDocument().get("cid").toString();
-                                        email = doc.getDocument().get("email").toString();
-                                        pass = doc.getDocument().get("password").toString();
-                                        names = doc.getDocument().get("names").toString();
-                                        surnames = doc.getDocument().get("surnames").toString();
-                                        phone = doc.getDocument().get("phone").toString();
-                                        role = doc.getDocument().get("role").toString();
-                                        datauser.add(new UserModel(address, birthdate, cid, email, pass, names, surnames, phone, role));
-                                    }
-                                    //Toast.makeText(MainActivity.this,"I have found "+count+" users",Toast.LENGTH_LONG).show();
-                                    if (count == 1) {
-                                        if (txtPass.getText().toString().equals(pass))
-                                            init(role);
-                                        else
-                                            Toast.makeText(MainActivity.this, "WARNING \nIncorrect password", Toast.LENGTH_LONG).show();
-                                    } else
-                                        Toast.makeText(MainActivity.this, "WARNING \nUser not found", Toast.LENGTH_LONG).show();
-                                }
-                            });
-                }
-                else
-                    Toast.makeText(MainActivity.this,"WARNING \nYou must fill all the fields",Toast.LENGTH_LONG).show();
+                queryInit();
             }
         });
+    }
+
+    public void queryInit(){
+        if(!txtUser.getText().toString().isEmpty() && !txtPass.getText().toString().isEmpty()) {
+            refcollection.whereEqualTo("email", txtUser.getText().toString())
+                    .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                        @Override
+                        public void onEvent(@Nullable QuerySnapshot snapshots, @Nullable FirebaseFirestoreException error) {
+                            if (error != null) {
+                                System.err.println("Query error: " + error);
+                                Toast.makeText(MainActivity.this, "Query error: " + error, Toast.LENGTH_LONG).show();
+                                return;
+                            }
+                            int count = 0;
+                            for (DocumentChange doc : snapshots.getDocumentChanges()) {
+                                count++;
+                                id=doc.getDocument().getId();
+                                address = doc.getDocument().get("address").toString();
+                                birthdate = doc.getDocument().get("birthdate").toString();
+                                cid = doc.getDocument().get("cid").toString();
+                                email = doc.getDocument().get("email").toString();
+                                pass = doc.getDocument().get("password").toString();
+                                names = doc.getDocument().get("names").toString();
+                                surnames = doc.getDocument().get("surnames").toString();
+                                phone = doc.getDocument().get("phone").toString();
+                                role = doc.getDocument().get("role").toString();
+                                datauser.add(new UserModel(address, birthdate, cid, email, pass, names, surnames, phone, role));
+                            }
+                            //Toast.makeText(MainActivity.this,"I have found "+count+" users",Toast.LENGTH_LONG).show();
+                            if (count == 1) {
+                                if (txtPass.getText().toString().equals(pass))
+                                    init(role);
+                                else
+                                    Toast.makeText(MainActivity.this, "WARNING \nIncorrect password", Toast.LENGTH_LONG).show();
+                            } else
+                                Toast.makeText(MainActivity.this, "WARNING \nUser not found", Toast.LENGTH_LONG).show();
+                        }
+                    });
+        }
+        else
+            Toast.makeText(MainActivity.this,"WARNING \nYou must fill all the fields",Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -120,20 +125,36 @@ public class MainActivity extends AppCompatActivity {
         if(type.equals("A"))
         {
             Intent intent = new Intent(this, activity_admin.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            intent.putExtra("id", id);
+            sendDataActivity();
+            intent.putExtras(b);
             startActivity(intent);
         }
         else if (type.equals("T"))
         {
             Intent intent = new Intent(this, activity_therapist.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            intent.putExtra("id", id);
+            sendDataActivity();
+            intent.putExtras(b);
             startActivity(intent);
         }
         else if (type.equals("P"))
         {
             Intent intent = new Intent(this, activity_patient.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            intent.putExtra("id", id);
+            sendDataActivity();
+            intent.putExtras(b);
             startActivity(intent);
         }
+    }
+
+    public void sendDataActivity(){
+        b.putString("id", id);
+        b.putString("cid", cid);
+        b.putString("address", address);
+        b.putString("birthdate", birthdate);
+        b.putString("email", email);
+        b.putString("pass", pass);
+        b.putString("names", names);
+        b.putString("surnames", surnames);
+        b.putString("phone", phone);
+        b.putString("role", role);
     }
 }

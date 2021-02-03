@@ -18,6 +18,8 @@ import fragments.fragment_myinfo;
 
 public class activity_admin extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
+
+    Bundle b = new Bundle();
     DrawerLayout drawerLayout;
     NavigationView navView;
     Fragment fragment;
@@ -28,6 +30,9 @@ public class activity_admin extends AppCompatActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin);
+
+        b = this.getIntent().getExtras();
+        sendDataActivity();
 
         toolbar1 = findViewById(R.id.toolbar_admin);
         setSupportActionBar(toolbar1);
@@ -51,6 +56,7 @@ public class activity_admin extends AppCompatActivity implements
         switch (menuItem.getItemId()) {
             case R.id.Umenu_section_1:
                 fragment = new fragment_myinfo();
+                fragment.setArguments(b);
                 fragmentTransaction = true;
                 break;
             case R.id.Umenu_section_2:
@@ -91,5 +97,18 @@ public class activity_admin extends AppCompatActivity implements
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    public void sendDataActivity(){
+        b.putString("id", b.getString("id"));
+        b.putString("cid", b.getString("cid"));
+        b.putString("address", b.getString("address"));
+        b.putString("birthdate", b.getString("birthdate"));
+        b.putString("email", b.getString("email"));
+        b.putString("pass", b.getString("pass"));
+        b.putString("names", b.getString("names"));
+        b.putString("surnames", b.getString("surnames"));
+        b.putString("phone", b.getString("phone"));
+        b.putString("role", b.getString("role"));
     }
 }
