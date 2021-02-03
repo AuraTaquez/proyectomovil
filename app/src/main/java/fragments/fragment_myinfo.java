@@ -80,6 +80,13 @@ public class fragment_myinfo extends Fragment {
         txtpass.setHint(pass);
         txtnames.setHint(names);
         txtphone.setHint(phone);
-        txtrole.setHint(role);
+
+        if (role.equals("A"))
+            txtrole.setHint("Administrator");
+        else if (role.equals("T"))
+            txtrole.setHint("Therapist");
+        else if (role.equals("P"))
+            txtrole.setHint("Patient");
+
     }
 }

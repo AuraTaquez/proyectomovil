@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
+import fragments.fragment_dispositives;
 import fragments.fragment_myinfo;
 
 public class activity_admin extends AppCompatActivity implements
@@ -63,7 +64,8 @@ public class activity_admin extends AppCompatActivity implements
 
                 break;
             case R.id.Umenu_section_3:
-
+                fragment = new fragment_dispositives();
+                fragmentTransaction = true;
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + menuItem.getItemId());
