@@ -16,39 +16,38 @@ import com.google.android.material.navigation.NavigationView;
 
 import fragments.fragment_miinfo;
 
-public class admin extends AppCompatActivity implements
+public class activity_therapist extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
+
     DrawerLayout drawerLayout;
     NavigationView navView;
+    Toolbar toolbar;
     Fragment fragment;
     boolean fragmentTransaction;
 
-    Toolbar toolbar1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin);
+        setContentView(R.layout.activity_terapeuta);
 
-        toolbar1 = findViewById(R.id.toolbar_admin);
-        setSupportActionBar(toolbar1);
+        toolbar = findViewById(R.id.toolbar_terapeuta);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.icon_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        navView = findViewById(R.id.nav_viewadmin);
+        navView = findViewById(R.id.nav_view_terapeuta);
         Menu m = navView.getMenu();
-        m.findItem(R.id.Umenu_seccion_2).setIcon(R.drawable.icon_terapeutas).setTitle("Terapeutas");
-        m.findItem(R.id.Umenu_seccion_3).setIcon(R.drawable.icon_dispositivos).setTitle("Dispositivos");
+        m.findItem(R.id.Umenu_seccion_2).setIcon(R.drawable.icon_patients).setTitle("Pacientes");
+        m.findItem(R.id.Umenu_seccion_3).setIcon(R.drawable.icon_see_progress).setTitle("Prescripciones");
         navView.setNavigationItemSelectedListener(this);
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         fragmentTransaction = false;
-        int id=menuItem.getItemId();
         fragment = null;
-
-        switch (menuItem.getItemId()) {
+        switch (item.getItemId()) {
             case R.id.Umenu_seccion_1:
                 fragment = new fragment_miinfo();
                 fragmentTransaction = true;
@@ -59,30 +58,30 @@ public class admin extends AppCompatActivity implements
             case R.id.Umenu_seccion_3:
 
                 break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + menuItem.getItemId());
         }
-        if (fragmentTransaction) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.contenido_administrador, fragment).commit();
-            menuItem.setChecked(true);
+        if(fragmentTransaction) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.contenido_terapeuta, fragment).commit();
+            item.setChecked(true);
             getSupportActionBar().setTitle("");
         }
         drawerLayout.closeDrawers();
         return true;
     }
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menuadmin) {
-        getMenuInflater().inflate(R.menu.menu_toolbar2,menuadmin);
-        MenuItem m = menuadmin.findItem(R.id.btnTipo);
-        m.setTitle("ADMINISTRADOR");
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_toolbar2,menu);
+        MenuItem m = menu.findItem(R.id.btnTipo);
+        m.setTitle("TERAPEUTA");
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         switch (item.getItemId()) {
             case android.R.id.home:
-                drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout_admin);
+                drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout_terapeuta);
                 drawerLayout.openDrawer(GravityCompat.START);
                 break;
         }

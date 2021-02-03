@@ -1,11 +1,11 @@
 package clases;
 
-public class DispositivosModel {
+public class DispositiveModel {
     String id, mac, dispositivo, estado, observaciones;
 
-    public DispositivosModel() {    }
+    public DispositiveModel() {    }
 
-    public DispositivosModel(String id, String mac, String dispositivo, String estado, String observaciones) {
+    public DispositiveModel(String id, String mac, String dispositivo, String estado, String observaciones) {
         this.id = id;
         this.mac = mac;
         this.dispositivo = dispositivo;

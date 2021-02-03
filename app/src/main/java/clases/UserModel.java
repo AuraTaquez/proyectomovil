@@ -1,9 +1,9 @@
 package clases;
 
-public class Usuario {
+public class UserModel {
     String address="", birthdate="", cid="", email="", pass = "", names="", surnames="", phone="", role = "";
 
-    public Usuario(String address, String birthdate, String cid, String email, String pass, String names, String surnames, String pone, String role) {
+    public UserModel(String address, String birthdate, String cid, String email, String pass, String names, String surnames, String pone, String role) {
         this.address = address;
         this.birthdate = birthdate;
         this.cid = cid;

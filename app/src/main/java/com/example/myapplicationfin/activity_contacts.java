@@ -15,12 +15,12 @@ import android.view.MenuItem;
 import java.util.ArrayList;
 import java.util.List;
 
-import adaptadores.adpParticipante;
-import clases.Participante;
+import adapters.adpParticipant;
+import clases.ParticipantModel;
 
 public class activity_contacts extends AppCompatActivity {
 
-    RecyclerView rcvParticipantes;
+    RecyclerView rcvParticipants;
     Toolbar toolbar;
 
     @Override
@@ -32,44 +32,44 @@ public class activity_contacts extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
 
-        rcvParticipantes = findViewById(R.id.rcvParticipantes);
+        rcvParticipants = findViewById(R.id.rcvParticipants);
         LinearLayoutManager linear = new LinearLayoutManager(getApplicationContext());
         linear.setOrientation(LinearLayoutManager.VERTICAL);
-        rcvParticipantes.setLayoutManager(linear);
-        rcvParticipantes.hasFixedSize();
+        rcvParticipants.setLayoutManager(linear);
+        rcvParticipants.hasFixedSize();
 
-        adpParticipante.showShimmer = true;
+        adpParticipant.showShimmer = true;
 
-        List<Participante> lista = new ArrayList<Participante>();
-        final adpParticipante adpParticipante = new adpParticipante(lista);
-        rcvParticipantes.setAdapter(adpParticipante);
+        List<ParticipantModel> lista = new ArrayList<ParticipantModel>();
+        final adpParticipant adpParticipant = new adpParticipant(lista);
+        rcvParticipants.setAdapter(adpParticipant);
 
-        Participante p1 = new Participante("Burbano Parraga Cristhian","+593980395656","cristhian.burbano2016@uteq.edu.ec");
-        Participante p2 = new Participante("Carvajal Florencia Carlos","+593979094938","carlos.carvajal2015@uteq.edu.ec");
-        Participante p3 = new Participante("Guerrero Moreira Rafael","+593979094938","rafael.guerrero2016@uteq.edu.ec");
-        Participante p4 = new Participante("Jaya Puruncaja Ruben","+593979094938","ruben.jaya2015@uteq.edu.ec");
-        Participante p5 = new Participante("Moreira Torres Daniela","+593979094938","daniela.moreira2015@uteq.edu.ec");
-        Participante p6 = new Participante("Ordoñez Guerrero Karina","+593979094938","karina.ordonez2016@uteq.edu.ec");
-        Participante p7 = new Participante("Taquez Suarez Aura","+593979094938","aura.taquez2015@uteq.edu.ec");
-        Participante p8 = new Participante("Zapata Espinoza Victor","+593979094938","victor.zapata2016@uteq.edu.ec");
+        ParticipantModel p1 = new ParticipantModel("Burbano Parraga Cristhian","+593980395656","cristhian.burbano2016@uteq.edu.ec");
+        ParticipantModel p2 = new ParticipantModel("Carvajal Florencia Carlos","+593979094938","carlos.carvajal2015@uteq.edu.ec");
+        ParticipantModel p3 = new ParticipantModel("Guerrero Moreira Rafael","+593979094938","rafael.guerrero2016@uteq.edu.ec");
+        ParticipantModel p4 = new ParticipantModel("Jaya Puruncaja Ruben","+593979094938","ruben.jaya2015@uteq.edu.ec");
+        ParticipantModel p5 = new ParticipantModel("Moreira Torres Daniela","+593979094938","daniela.moreira2015@uteq.edu.ec");
+        ParticipantModel p6 = new ParticipantModel("Ordoñez Guerrero Karina","+593979094938","karina.ordonez2016@uteq.edu.ec");
+        ParticipantModel p7 = new ParticipantModel("Taquez Suarez Aura","+593979094938","aura.taquez2015@uteq.edu.ec");
+        ParticipantModel p8 = new ParticipantModel("Zapata Espinoza Victor","+593979094938","victor.zapata2016@uteq.edu.ec");
 
-        final List<Participante> finalLista = new ArrayList<Participante>();
-        finalLista.add(p1);
-        finalLista.add(p2);
-        finalLista.add(p3);
-        finalLista.add(p4);
-        finalLista.add(p5);
-        finalLista.add(p6);
-        finalLista.add(p7);
-        finalLista.add(p8);
+        final List<ParticipantModel> finalList = new ArrayList<ParticipantModel>();
+        finalList.add(p1);
+        finalList.add(p2);
+        finalList.add(p3);
+        finalList.add(p4);
+        finalList.add(p5);
+        finalList.add(p6);
+        finalList.add(p7);
+        finalList.add(p8);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                adpParticipante adpParticipantes = new adpParticipante(finalLista);
-                rcvParticipantes.setAdapter(adpParticipantes);
-                adpParticipantes.showShimmer = false;
-                adpParticipantes.notifyDataSetChanged();
+                adpParticipant adpParticipants = new adpParticipant(finalList);
+                rcvParticipants.setAdapter(adpParticipants);
+                adpParticipants.showShimmer = false;
+                adpParticipants.notifyDataSetChanged();
             }
         }, 1000);
     }
@@ -83,11 +83,11 @@ public class activity_contacts extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if(id == R.id.btnInformacion) {
+        if(id == R.id.btnInformation) {
             Intent intent = new Intent(this, activity_information.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
-        if(id == R.id.btnContactos) {
+        if(id == R.id.btnContacts) {
             Intent intent = new Intent(this, activity_contacts.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }

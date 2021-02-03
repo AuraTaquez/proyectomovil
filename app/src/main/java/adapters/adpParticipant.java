@@ -1,4 +1,4 @@
-package adaptadores;
+package adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,12 +14,12 @@ import com.facebook.shimmer.ShimmerFrameLayout;
 
 import java.util.List;
 
-import clases.Participante;
+import clases.ParticipantModel;
 
-public class adpParticipante extends RecyclerView.Adapter<adpParticipante.ViewHolder> {
+public class adpParticipant extends RecyclerView.Adapter<adpParticipant.ViewHolder> {
 
-    private List<Participante> datos;
-    public adpParticipante(List<Participante> datos){this.datos = datos;}
+    private List<ParticipantModel> datos;
+    public adpParticipant(List<ParticipantModel> datos){this.datos = datos;}
 
     public static boolean showShimmer = true;
     int cantShimmer = 8;
@@ -44,7 +44,7 @@ public class adpParticipante extends RecyclerView.Adapter<adpParticipante.ViewHo
             btnShimmer2 = itemView.findViewById(R.id.imageViewliEm);
         }
 
-        public void add_datos(Participante valor) {
+        public void add_datos(ParticipantModel valor) {
             txtParticipante.setText(valor.getNombre());
             txtCel.setText(valor.getTelefono());
             txtEmail.setText(valor.getEmail());
@@ -53,14 +53,14 @@ public class adpParticipante extends RecyclerView.Adapter<adpParticipante.ViewHo
 
     @NonNull
     @Override
-    public adpParticipante.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public adpParticipant.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = null;
         view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_participante,null,false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull adpParticipante.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull adpParticipant.ViewHolder holder, int position) {
         try {
             if(showShimmer)
             {

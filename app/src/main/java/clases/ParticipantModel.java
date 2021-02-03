@@ -1,11 +1,11 @@
 package clases;
 
-public class Participante {
+public class ParticipantModel {
     String nombre;
     String telefono;
     String email;
 
-    public Participante(String nombre, String telefono, String email) {
+    public ParticipantModel(String nombre, String telefono, String email) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.email = email;

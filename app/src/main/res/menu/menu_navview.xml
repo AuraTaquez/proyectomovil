@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single" android:id="@+id/menunavview">
-        <item android:title="Mi Información"
-            android:id="@+id/Umenu_seccion_1"
-            android:icon="@drawable/icon_miinfo" />
-        <item android:title="Realizar Ejercicios"
-            android:id="@+id/Umenu_seccion_2"
-            android:icon="@drawable/icon_reejer" />
-        <item android:title="Ver Avances"
-            android:id="@+id/Umenu_seccion_3"
-            android:icon="@drawable/icon_veravances" />
+        <item android:title="My Information"
+            android:id="@+id/Umenu_section_1"
+            android:icon="@drawable/icon_myinfo" />
+        <item android:title=""
+            android:id="@+id/Umenu_section_2"
+            android:icon="@drawable/icon_therapies" />
+        <item android:title=""
+            android:id="@+id/Umenu_section_3"
+            android:icon="@drawable/icon_see_progress" />
     </group>
 </menu>

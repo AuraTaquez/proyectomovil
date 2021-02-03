@@ -23,17 +23,17 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
-import clases.Usuario;
+import clases.UserModel;
 
 public class MainActivity extends AppCompatActivity {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     CollectionReference refcollection = db.collection("users");
-    public ArrayList<Usuario> datauser = new ArrayList<>();
+    public ArrayList<UserModel> datauser = new ArrayList<>();
     Toolbar toolbar;
     TextView txtUser;
     TextView txtPass;
-    Button btnIniciar;
+    Button btnLogin;
     String id="", address="", birthdate="", cid="", email="", pass = "", names="", surnames="", phone="", role = "";
 
     @Override
@@ -45,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
 
-        txtUser=(TextView) findViewById(R.id.et_usuario);
-        txtPass=(TextView) findViewById(R.id.contraseña);
+        txtUser=(TextView) findViewById(R.id.txtUser);
+        txtPass=(TextView) findViewById(R.id.txtPassword);
 
-        btnIniciar=(Button) findViewById(R.id.iniciar_sesion);
+        btnLogin=(Button) findViewById(R.id.btn_log_in);
 
-        btnIniciar.setOnClickListener(new View.OnClickListener() {
+        btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!txtUser.getText().toString().isEmpty() && !txtPass.getText().toString().isEmpty()) {
@@ -59,12 +59,13 @@ public class MainActivity extends AppCompatActivity {
                                 @Override
                                 public void onEvent(@Nullable QuerySnapshot snapshots, @Nullable FirebaseFirestoreException error) {
                                     if (error != null) {
-                                        System.err.println("Error al consultar: " + error);
+                                        System.err.println("Query error: " + error);
+                                        Toast.makeText(MainActivity.this, "Query error: " + error, Toast.LENGTH_LONG).show();
                                         return;
                                     }
-                                    int cont = 0;
+                                    int count = 0;
                                     for (DocumentChange doc : snapshots.getDocumentChanges()) {
-                                        cont++;
+                                        count++;
                                         id=doc.getDocument().getId();
                                         address = doc.getDocument().get("address").toString();
                                         birthdate = doc.getDocument().get("birthdate").toString();
@@ -75,21 +76,21 @@ public class MainActivity extends AppCompatActivity {
                                         surnames = doc.getDocument().get("surnames").toString();
                                         phone = doc.getDocument().get("phone").toString();
                                         role = doc.getDocument().get("role").toString();
-                                        datauser.add(new Usuario(address, birthdate, cid, email, pass, names, surnames, phone, role));
+                                        datauser.add(new UserModel(address, birthdate, cid, email, pass, names, surnames, phone, role));
                                     }
-                                    //Toast.makeText(MainActivity.this,"He encotrado "+cont+"usuarios",Toast.LENGTH_LONG).show();
-                                    if (cont == 1) {
+                                    //Toast.makeText(MainActivity.this,"I have found "+count+" users",Toast.LENGTH_LONG).show();
+                                    if (count == 1) {
                                         if (txtPass.getText().toString().equals(pass))
-                                            iniciar(role);
+                                            init(role);
                                         else
-                                            Toast.makeText(MainActivity.this, "Advertencia \nClave Incorrecta ", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(MainActivity.this, "WARNING \nIncorrect password", Toast.LENGTH_LONG).show();
                                     } else
-                                        Toast.makeText(MainActivity.this, "Advertencia \nUsuario no encontrado", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(MainActivity.this, "WARNING \nUser not found", Toast.LENGTH_LONG).show();
                                 }
                             });
                 }
                 else
-                    Toast.makeText(MainActivity.this,"Advertencia \nDebe llenar todos los campos",Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this,"WARNING \nYou must fill all the fields",Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -103,34 +104,34 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if(id == R.id.btnInformacion) {
+        if(id == R.id.btnInformation) {
             Intent intent = new Intent(this, activity_information.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
-        if(id == R.id.btnContactos) {
+        if(id == R.id.btnContacts) {
             Intent intent = new Intent(this, activity_contacts.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }
 
-    public void iniciar(String tipo)
+    public void init(String type)
     {
-        if(tipo.equals("A"))
+        if(type.equals("A"))
         {
-            Intent intent = new Intent(this, admin.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            Intent intent = new Intent(this, activity_admin.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             intent.putExtra("id", id);
             startActivity(intent);
         }
-        else if (tipo.equals("T"))
+        else if (type.equals("T"))
         {
-            Intent intent = new Intent(this, terapeuta.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            Intent intent = new Intent(this, activity_therapist.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             intent.putExtra("id", id);
             startActivity(intent);
         }
-        else if (tipo.equals("P"))
+        else if (type.equals("P"))
         {
-            Intent intent = new Intent(this, paciente.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            Intent intent = new Intent(this, activity_patient.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             intent.putExtra("id", id);
             startActivity(intent);
         }

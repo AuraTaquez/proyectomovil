@@ -42,7 +42,7 @@
                         android:layout_width="20dp"
                         android:layout_height="21dp"
                         android:layout_marginEnd="4dp"
-                        app:srcCompat="@drawable/icon_participante"
+                        app:srcCompat="@drawable/icon_participant"
                         tools:ignore="VectorDrawableCompat"
                         app:tint="#FFFFFF" />
 

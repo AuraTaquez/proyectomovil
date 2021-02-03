@@ -2,12 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/btnTipo"
+        android:id="@+id/btnType"
         android:title=""
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/btnCerrarSesion"
-        android:icon="@drawable/icon_cerrarsesion"
-        android:title="Cerrar Sesión"
+        android:id="@+id/btnSign_off"
+        android:icon="@drawable/icon_sign_off"
+        android:title="Sign off"
         app:showAsAction="ifRoom" />
 </menu>

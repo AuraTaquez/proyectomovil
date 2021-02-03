@@ -49,7 +49,7 @@
             android:translationY="24dp" />
 
         <EditText
-            android:id="@+id/et_usuario"
+            android:id="@+id/txtUser"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginLeft="20dp"
@@ -70,7 +70,7 @@
             android:translationY="30dp" />
 
         <EditText
-            android:id="@+id/contraseña"
+            android:id="@+id/txtPassword"
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:layout_marginLeft="20dp"
@@ -91,7 +91,7 @@
             android:translationY="20dp" />
 
         <Button
-            android:id="@+id/iniciar_sesion"
+            android:id="@+id/btn_log_in"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"

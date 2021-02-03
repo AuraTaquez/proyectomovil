@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="MI INFORMACIÓN"
+            android:text="MY INFORMATION"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -49,14 +49,14 @@
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="80dp"
-                android:background="@drawable/titulo_border">
+                android:background="@drawable/title_border">
 
                 <TextView
                     style="TextAppearance.AppCompat.Title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="DATOS"
+                    android:text="DATA"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -70,13 +70,13 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/id"
+                    android:id="@+id/cid"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/round_border"
-                    android:drawableStart="@drawable/ic_cedula"
+                    android:drawableStart="@drawable/ic_cid"
                     android:drawablePadding="10dp"
-                    android:hint="ID USUARIO"
+                    android:hint="CID"
                     android:inputType="textPersonName"
                     android:padding="16dp"
                     android:textColorHint="@color/black"
@@ -86,14 +86,14 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/nombres"
+                    android:id="@+id/names_surnames"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="60dp"
                     android:background="@drawable/round_border"
-                    android:drawableStart="@drawable/ic_cedula"
+                    android:drawableStart="@drawable/ic_cid"
                     android:drawablePadding="10dp"
-                    android:hint="NOMBRES USUARIO"
+                    android:hint="NAMES AND SURNAMES"
                     android:inputType="textPersonName"
                     android:padding="16dp"
                     android:textColorHint="@color/black"
@@ -103,14 +103,14 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/apellidos"
+                    android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="120dp"
                     android:background="@drawable/round_border"
-                    android:drawableStart="@drawable/ic_cedula"
+                    android:drawableStart="@drawable/ic_cid"
                     android:drawablePadding="10dp"
-                    android:hint="APELLIDOS USUARIO"
+                    android:hint="ADDRESS"
                     android:inputType="textPersonName"
                     android:padding="16dp"
                     android:textColorHint="@color/black"
@@ -120,14 +120,14 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/fechanac"
+                    android:id="@+id/phone"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="180dp"
                     android:background="@drawable/round_border"
-                    android:drawableStart="@drawable/ic_cedula"
+                    android:drawableStart="@drawable/ic_cid"
                     android:drawablePadding="10dp"
-                    android:hint="FECHA NACIMIENTO USUARIO"
+                    android:hint="PHONE"
                     android:inputType="textPersonName"
                     android:padding="16dp"
                     android:textColorHint="@color/black"
@@ -137,14 +137,31 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/genero"
+                    android:id="@+id/birthdate"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="240dp"
                     android:background="@drawable/round_border"
-                    android:drawableStart="@drawable/ic_cedula"
+                    android:drawableStart="@drawable/ic_cid"
                     android:drawablePadding="10dp"
-                    android:hint="GÉNERO USUARIO"
+                    android:hint="BIRTHDATE"
+                    android:inputType="textPersonName"
+                    android:padding="16dp"
+                    android:textColorHint="@color/black"
+                    app:drawableTint="#044e7d"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/role"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="300dp"
+                    android:background="@drawable/round_border"
+                    android:drawableStart="@drawable/ic_cid"
+                    android:drawablePadding="10dp"
+                    android:hint="ROLE"
                     android:inputType="textPersonName"
                     android:padding="16dp"
                     android:textColorHint="@color/black"
@@ -162,7 +179,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="410dp"
+        android:layout_marginTop="470dp"
         android:padding="2dp">
 
         <androidx.cardview.widget.CardView
@@ -183,14 +200,14 @@
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="80dp"
-                android:background="@drawable/titulo_border">
+                android:background="@drawable/title_border">
 
                 <TextView
                     style="TextAppearance.AppCompat.Title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
-                    android:text="CREDENCIALES"
+                    android:text="CREDENTIALS"
                     android:textColor="@color/white"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -204,13 +221,13 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/usuario"
+                    android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:background="@drawable/round_border"
-                    android:drawableStart="@drawable/icon_usuario"
+                    android:drawableStart="@drawable/icon_user"
                     android:drawablePadding="10dp"
-                    android:hint="USUARIO"
+                    android:hint="EMAIL"
                     android:inputType="textPersonName"
                     android:padding="16dp"
                     android:textColorHint="@color/black"
@@ -220,14 +237,14 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/clave"
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:layout_marginTop="60dp"
                     android:background="@drawable/round_border"
                     android:drawableStart="@drawable/ic_baseline_lock_open_24"
                     android:drawablePadding="10dp"
-                    android:hint="CLAVE"
+                    android:hint="PASSWORD"
                     android:inputType="textPersonName"
                     android:padding="16dp"
                     android:textColorHint="@color/black"

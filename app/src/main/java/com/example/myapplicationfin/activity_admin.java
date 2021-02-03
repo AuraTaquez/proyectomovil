@@ -16,76 +16,77 @@ import com.google.android.material.navigation.NavigationView;
 
 import fragments.fragment_miinfo;
 
-public class terapeuta extends AppCompatActivity implements
+public class activity_admin extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
-
     DrawerLayout drawerLayout;
     NavigationView navView;
-    Toolbar toolbar;
     Fragment fragment;
     boolean fragmentTransaction;
 
+    Toolbar toolbar1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_terapeuta);
+        setContentView(R.layout.activity_admin);
 
-        toolbar = findViewById(R.id.toolbar_terapeuta);
-        setSupportActionBar(toolbar);
+        toolbar1 = findViewById(R.id.toolbar_admin);
+        setSupportActionBar(toolbar1);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.icon_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        navView = findViewById(R.id.nav_view_terapeuta);
+        navView = findViewById(R.id.nav_viewadmin);
         Menu m = navView.getMenu();
-        m.findItem(R.id.Umenu_seccion_2).setIcon(R.drawable.icon_pacientes).setTitle("Pacientes");
-        m.findItem(R.id.Umenu_seccion_3).setIcon(R.drawable.icon_veravances).setTitle("Prescripciones");
+        m.findItem(R.id.Umenu_section_2).setIcon(R.drawable.icon_therapists).setTitle("Therapists");
+        m.findItem(R.id.Umenu_section_3).setIcon(R.drawable.icon_dispositives).setTitle("Dispositives");
         navView.setNavigationItemSelectedListener(this);
     }
 
     @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         fragmentTransaction = false;
+        int id=menuItem.getItemId();
         fragment = null;
-        switch (item.getItemId()) {
-            case R.id.Umenu_seccion_1:
+
+        switch (menuItem.getItemId()) {
+            case R.id.Umenu_section_1:
                 fragment = new fragment_miinfo();
                 fragmentTransaction = true;
                 break;
-            case R.id.Umenu_seccion_2:
+            case R.id.Umenu_section_2:
 
                 break;
-            case R.id.Umenu_seccion_3:
+            case R.id.Umenu_section_3:
 
                 break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + menuItem.getItemId());
         }
-        if(fragmentTransaction) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.contenido_terapeuta, fragment).commit();
-            item.setChecked(true);
+        if (fragmentTransaction) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.contenido_administrador, fragment).commit();
+            menuItem.setChecked(true);
             getSupportActionBar().setTitle("");
         }
         drawerLayout.closeDrawers();
         return true;
     }
-
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_toolbar2,menu);
-        MenuItem m = menu.findItem(R.id.btnTipo);
-        m.setTitle("TERAPEUTA");
+    public boolean onCreateOptionsMenu(Menu menuadmin) {
+        getMenuInflater().inflate(R.menu.menu_toolbar2,menuadmin);
+        MenuItem m = menuadmin.findItem(R.id.btnType);
+        m.setTitle("ADMINISTRATOR");
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         switch (item.getItemId()) {
             case android.R.id.home:
-                drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout_terapeuta);
+                drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout_admin);
                 drawerLayout.openDrawer(GravityCompat.START);
                 break;
         }
-        if(id == R.id.btnCerrarSesion) {
+        if(id == R.id.btnSign_off) {
             Intent intent = new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }

@@ -17,18 +17,18 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-import adaptadores.DispositivoAdapter;
-import clases.DispositivosModel;
+import adapters.adpDispositive;
+import clases.DispositiveModel;
 
-public class Dispositivos extends AppCompatActivity {
+public class activity_dispositives extends AppCompatActivity {
 
     private DatabaseReference refDataBase;
     EditText txtMensaje;
     Button btnEnviar;
 
-    private DispositivoAdapter mAdapter;
+    private adpDispositive mAdapter;
     private RecyclerView mRecyclerView;
-    private ArrayList<DispositivosModel> mDispositivossList = new ArrayList<>();
+    private ArrayList<DispositiveModel> mDispositivesList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class Dispositivos extends AppCompatActivity {
 
         refDataBase = FirebaseDatabase.getInstance().getReference();
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.rvDispositivos);
+        mRecyclerView = (RecyclerView) findViewById(R.id.rcvDispositives);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
@@ -50,17 +50,17 @@ public class Dispositivos extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
-                    mDispositivossList.clear();
+                    mDispositivesList.clear();
                     for(DataSnapshot ds: snapshot.getChildren()){
                         //String ID = ds.getKey();
                         String MAC = ds.child("MAC").getValue().toString();
-                        String dispositivo = ds.child("dispositivo").getValue().toString();
-                        String estado = ds.child("estado").getValue().toString();
-                        String observacion = ds.child("observaciones").getValue().toString();
-                        mDispositivossList.add(new DispositivosModel("0", MAC, dispositivo, estado, observacion));
+                        String dispositive = ds.child("dispositivo").getValue().toString();
+                        String state = ds.child("estado").getValue().toString();
+                        String observation = ds.child("observaciones").getValue().toString();
+                        mDispositivesList.add(new DispositiveModel("0", MAC, dispositive, state, observation));
 
                     }
-                    mAdapter = new DispositivoAdapter(mDispositivossList, R.layout.dispositivos_view);
+                    mAdapter = new adpDispositive(mDispositivesList, R.layout.dispositivos_view);
                     mRecyclerView.setAdapter(mAdapter);
                 }
             }

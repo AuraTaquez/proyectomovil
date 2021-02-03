@@ -17,7 +17,7 @@ import com.google.android.material.navigation.NavigationView;
 import fragments.fragment_miinfo;
 import fragments.fragment_terapias;
 
-public class paciente extends AppCompatActivity implements
+public class activity_patient extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
@@ -40,7 +40,7 @@ public class paciente extends AppCompatActivity implements
         navView = findViewById(R.id.nav_view);
         Menu m = navView.getMenu();
         m.removeItem(R.id.Umenu_seccion_3);
-        m.findItem(R.id.Umenu_seccion_2).setIcon(R.drawable.icon_veravances).setTitle("Mis Terapias");
+        m.findItem(R.id.Umenu_seccion_2).setIcon(R.drawable.icon_see_progress).setTitle("Mis Terapias");
         navView.setNavigationItemSelectedListener(this);
     }
 

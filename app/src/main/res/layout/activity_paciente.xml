@@ -6,7 +6,7 @@
     android:id="@+id/drawer_layout_paciente"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".paciente">
+    tools:context=".activity_patient">
 
     <LinearLayout
         android:layout_width="match_parent"

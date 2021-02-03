@@ -45,7 +45,7 @@
             android:foreground="@color/black"/>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvDispositivos"
+            android:id="@+id/rcvDispositives"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
