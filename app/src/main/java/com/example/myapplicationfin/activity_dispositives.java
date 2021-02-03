@@ -6,9 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
-import android.util.Log;
-import android.widget.Button;
-import android.widget.EditText;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -22,7 +19,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-
 import java.util.ArrayList;
 
 import adapters.adpDispositive;
@@ -32,8 +28,6 @@ public class activity_dispositives extends AppCompatActivity {
 
     private DatabaseReference refDataBase;
     private FirebaseFirestore refFireStore;
-    EditText txtMensaje;
-    Button btnEnviar;
 
     private adpDispositive mAdapter;
     private RecyclerView mRecyclerView;
@@ -50,11 +44,10 @@ public class activity_dispositives extends AppCompatActivity {
         mRecyclerView = (RecyclerView) findViewById(R.id.rcvDispositives);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-
-        getDispositivosFromFireStore();
+        getDispositivesFromFireStore();
     }
 
-    private void getDispositivosFromFireStore(){
+    private void getDispositivesFromFireStore(){
         refFireStore.collection("dispositivos")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -70,7 +63,7 @@ public class activity_dispositives extends AppCompatActivity {
                                 mDispositivesList.add(new DispositiveModel("0", MAC, dispositive, state, observation));
                                 //Log.d(TAG, document.getId() + " => " + document.getData());
                             }
-                            mAdapter = new adpDispositive(mDispositivesList, R.layout.dispositivos_view);
+                            mAdapter = new adpDispositive(mDispositivesList, R.layout.item_dispositives);
                             mRecyclerView.setAdapter(mAdapter);
                         } else {
                             //Log.w(TAG, "Error getting documents.", task.getException());
@@ -79,8 +72,7 @@ public class activity_dispositives extends AppCompatActivity {
                 });
     }
 
-
-    private void getDispositivosFromFireBase(){
+    private void getDispositivesFromFireBase(){
         refDataBase.child("dispositivos").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -95,7 +87,7 @@ public class activity_dispositives extends AppCompatActivity {
                         mDispositivesList.add(new DispositiveModel("0", MAC, dispositive, state, observation));
 
                     }
-                    mAdapter = new adpDispositive(mDispositivesList, R.layout.dispositivos_view);
+                    mAdapter = new adpDispositive(mDispositivesList, R.layout.item_dispositives);
                     mRecyclerView.setAdapter(mAdapter);
                 }
             }
@@ -106,7 +98,5 @@ public class activity_dispositives extends AppCompatActivity {
             }
         });
     }
-
-
 
 }

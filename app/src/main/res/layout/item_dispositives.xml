@@ -16,8 +16,7 @@
             android:layout_height="match_parent"
             android:text="  MAC :"
             android:textSize="18sp"
-            android:textColor="@color/black"
-             />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/txtviewMAC"
@@ -34,18 +33,18 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtviewDispositivo_"
+            android:id="@+id/txtviewDispositive_"
             android:layout_width="138dp"
             android:layout_height="match_parent"
-            android:text="  Dispositivo :"
+            android:text="  Dispositive :"
             android:textSize="18sp"
             android:textColor="@color/black"/>
 
         <TextView
-            android:id="@+id/txtviewDispositivo"
+            android:id="@+id/txtviewDispositive"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="dispositivo..."
+            android:text="dispositive..."
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -56,18 +55,18 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtviewEstado_"
+            android:id="@+id/txtviewState_"
             android:layout_width="138dp"
             android:layout_height="match_parent"
-            android:text="  Estado :"
+            android:text="  State :"
             android:textSize="18sp"
             android:textColor="@color/black"/>
 
         <TextView
-            android:id="@+id/txtviewEstado"
+            android:id="@+id/txtviewState"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="estado..."
+            android:text="state..."
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -78,18 +77,18 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/txtviewObservaciones_"
+            android:id="@+id/txtviewObservations_"
             android:layout_width="138dp"
             android:layout_height="match_parent"
-            android:text="  Observaciones:"
+            android:text="  Observations:"
             android:textSize="18sp"
             android:textColor="@color/black"/>
 
         <TextView
-            android:id="@+id/txtviewObservaciones"
+            android:id="@+id/txtviewObservations"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="observaciones..."
+            android:text="observations..."
             android:textSize="18sp" />
 
     </LinearLayout>
@@ -100,6 +99,5 @@
         android:layout_height="1dp"
         android:background="?android:attr/listDivider"
         android:foreground="@color/black"/>
-
 
 </LinearLayout>

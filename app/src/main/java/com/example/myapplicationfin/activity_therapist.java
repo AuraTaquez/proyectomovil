@@ -14,7 +14,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
-import fragments.fragment_miinfo;
+import fragments.fragment_myinfo;
 
 public class activity_therapist extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -36,7 +36,7 @@ public class activity_therapist extends AppCompatActivity implements
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.icon_menu);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        navView = findViewById(R.id.nav_view_terapeuta);
+        navView = findViewById(R.id.nav_view_therapist);
         Menu m = navView.getMenu();
         m.findItem(R.id.Umenu_section_2).setIcon(R.drawable.icon_patients).setTitle("Patients");
         m.findItem(R.id.Umenu_section_3).setIcon(R.drawable.icon_see_progress).setTitle("Prescriptions");
@@ -49,7 +49,7 @@ public class activity_therapist extends AppCompatActivity implements
         fragment = null;
         switch (item.getItemId()) {
             case R.id.Umenu_section_1:
-                fragment = new fragment_miinfo();
+                fragment = new fragment_myinfo();
                 fragmentTransaction = true;
                 break;
             case R.id.Umenu_section_2:

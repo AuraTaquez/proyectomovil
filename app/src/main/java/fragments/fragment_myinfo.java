@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.myapplicationfin.R;
-public class fragment_miinfo extends Fragment {
+public class fragment_myinfo extends Fragment {
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -18,12 +18,12 @@ public class fragment_miinfo extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public fragment_miinfo() {
+    public fragment_myinfo() {
         // Required empty public constructor
     }
 
-    public static fragment_miinfo newInstance(String param1, String param2) {
-        fragment_miinfo fragment = new fragment_miinfo();
+    public static fragment_myinfo newInstance(String param1, String param2) {
+        fragment_myinfo fragment = new fragment_myinfo();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

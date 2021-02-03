@@ -14,7 +14,7 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
-import fragments.fragment_miinfo;
+import fragments.fragment_myinfo;
 
 public class activity_admin extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -50,7 +50,7 @@ public class activity_admin extends AppCompatActivity implements
 
         switch (menuItem.getItemId()) {
             case R.id.Umenu_section_1:
-                fragment = new fragment_miinfo();
+                fragment = new fragment_myinfo();
                 fragmentTransaction = true;
                 break;
             case R.id.Umenu_section_2:

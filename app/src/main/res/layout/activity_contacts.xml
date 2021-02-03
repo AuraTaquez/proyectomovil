@@ -89,7 +89,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
-                    android:text="Este sistema fue desarrollado con el fin de facilitar le monitoreo de la recuperación de pacientes en rehabilitación, en conjunto con herramientas diseñadas con componentes electrónicos usando el concepto de IoT en éstas. Tambien mostrar la información precisa de cada proceso en la rehabilitación con esta aplicación web."
+                    android:text="This system was developed in order to facilitate the monitoring of the recovery of patients in rehabilitation, in conjunction with tools designed with electronic components using the concept of IoT in them. Also show the precise information of each process in the rehabilitation with this web application."
                     android:textAlignment="textStart"
                     android:textColor="#C7C7C7"
                     android:textStyle="italic" />

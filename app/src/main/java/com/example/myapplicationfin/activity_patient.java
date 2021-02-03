@@ -14,8 +14,8 @@ import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationView;
 
-import fragments.fragment_miinfo;
-import fragments.fragment_terapias;
+import fragments.fragment_myinfo;
+import fragments.fragment_therapies;
 
 public class activity_patient extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -50,11 +50,11 @@ public class activity_patient extends AppCompatActivity implements
         fragment = null;
         switch (menuItem.getItemId()) {
             case R.id.Umenu_section_1:
-                fragment = new fragment_miinfo();
+                fragment = new fragment_myinfo();
                 fragmentTransaction = true;
                 break;
             case R.id.Umenu_section_2:
-                fragment = new fragment_terapias();
+                fragment = new fragment_therapies();
                 fragmentTransaction = true;
                 break;
         }

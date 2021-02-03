@@ -40,8 +40,8 @@ public class activity_contacts extends AppCompatActivity {
 
         adpParticipant.showShimmer = true;
 
-        List<ParticipantModel> lista = new ArrayList<ParticipantModel>();
-        final adpParticipant adpParticipant = new adpParticipant(lista);
+        List<ParticipantModel> list = new ArrayList<ParticipantModel>();
+        final adpParticipant adpParticipant = new adpParticipant(list);
         rcvParticipants.setAdapter(adpParticipant);
 
         ParticipantModel p1 = new ParticipantModel("Burbano Parraga Cristhian","+593980395656","cristhian.burbano2016@uteq.edu.ec");

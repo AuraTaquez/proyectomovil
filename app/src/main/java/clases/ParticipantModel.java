@@ -1,30 +1,30 @@
 package clases;
 
 public class ParticipantModel {
-    String nombre;
-    String telefono;
+    String name;
+    String phone;
     String email;
 
-    public ParticipantModel(String nombre, String telefono, String email) {
-        this.nombre = nombre;
-        this.telefono = telefono;
+    public ParticipantModel(String name, String phone, String email) {
+        this.name = name;
+        this.phone = phone;
         this.email = email;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getTelefono() {
-        return telefono;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getEmail() {

@@ -45,8 +45,8 @@ public class adpParticipant extends RecyclerView.Adapter<adpParticipant.ViewHold
         }
 
         public void add_data(ParticipantModel valor) {
-            txtParticipant.setText(valor.getNombre());
-            txtCel.setText(valor.getTelefono());
+            txtParticipant.setText(valor.getName());
+            txtCel.setText(valor.getPhone());
             txtEmail.setText(valor.getEmail());
         }
     }

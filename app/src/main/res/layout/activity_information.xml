@@ -68,7 +68,7 @@
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="135dp"
             android:gravity="left"
-            android:text="Internet de las cosas (IoT) ha fortalecido de gran medida los procesos en la Rehabilitación, IoT con su frecuente crecimiento ha facilitado muchos procesos que anteriormente eran mas dificultosos, y que conllevaban mucho tiempo en realizar, trayendo herramientas innovadoras para el provecho de los profesionales y los pacientes facilitando cada uno de los procesos que suscitan en esta."
+            android:text="Internet of things (IoT) has greatly strengthened the processes in Rehabilitation, IoT with its frequent growth has facilitated many processes that were previously more difficult, and that took a long time to carry out, bringing innovative tools for the benefit of professionals and patients facilitating each of the processes that arise in this."
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="10dp"
             android:layout_marginTop="390dp"
-            android:text="SR-IoT es un sistema que mediante la conexión con dispositivos IoT, pretende facilitar el monitoreo de datos generados en los procesos de rehabilitación de los pacientes con dificultades motrices, al mismo tiempo que ayuda a los terapeutas a gestionar mejor los datos ayudandolos en la toma de decisiones para la correcta recuperación de los pacientes."
+            android:text="SR-IoT is a system that, by connecting with IoT devices, aims to facilitate the monitoring of data generated in the rehabilitation processes of patients with motor difficulties, at the same time that it helps therapists to better manage the data by helping them in taking decision-making for the correct recovery of patients."
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
 

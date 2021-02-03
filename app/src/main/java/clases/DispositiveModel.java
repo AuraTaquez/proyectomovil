@@ -1,16 +1,16 @@
 package clases;
 
 public class DispositiveModel {
-    String id, mac, dispositivo, estado, observaciones;
+    String id, mac, dispositive, state, observations;
 
     public DispositiveModel() {    }
 
-    public DispositiveModel(String id, String mac, String dispositivo, String estado, String observaciones) {
+    public DispositiveModel(String id, String mac, String dispositive, String state, String observations) {
         this.id = id;
         this.mac = mac;
-        this.dispositivo = dispositivo;
-        this.estado = estado;
-        this.observaciones = observaciones;
+        this.dispositive = dispositive;
+        this.state = state;
+        this.observations = observations;
     }
 
     public String getId() {
@@ -29,27 +29,27 @@ public class DispositiveModel {
         this.mac = mac;
     }
 
-    public String getDispositivo() {
-        return dispositivo;
+    public String getDispositive() {
+        return dispositive;
     }
 
-    public void setDispositivo(String dispositivo) {
-        this.dispositivo = dispositivo;
+    public void setDispositive(String dispositive) {
+        this.dispositive = dispositive;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getState() {
+        return state;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setState(String state) {
+        this.state = state;
     }
 
-    public String getObservaciones() {
-        return observaciones;
+    public String getObservations() {
+        return observations;
     }
 
-    public void setObservaciones(String observaciones) {
-        this.observaciones = observaciones;
+    public void setObservations(String observations) {
+        this.observations = observations;
     }
 }

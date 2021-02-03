@@ -34,9 +34,9 @@ public class adpDispositive extends RecyclerView.Adapter<adpDispositive.ViewHold
     public void onBindViewHolder(@NonNull ViewHolderDIS holder, int position) {
         DispositiveModel dispositivosModel = dispositiveList.get(position);
         holder.txtMAC.setText(dispositivosModel.getMac());
-        holder.txtDispositive.setText(dispositivosModel.getDispositivo());
-        holder.txtState.setText(dispositivosModel.getEstado());
-        holder.txtObservation.setText(dispositivosModel.getObservaciones());
+        holder.txtDispositive.setText(dispositivosModel.getDispositive());
+        holder.txtState.setText(dispositivosModel.getState());
+        holder.txtObservation.setText(dispositivosModel.getObservations());
     }
 
     @Override
@@ -54,9 +54,9 @@ public class adpDispositive extends RecyclerView.Adapter<adpDispositive.ViewHold
         public ViewHolderDIS(View view){
             super(view);
             this.txtMAC = (TextView) view.findViewById(R.id.txtviewMAC);
-            this.txtDispositive = (TextView) view.findViewById(R.id.txtviewDispositivo);
-            this.txtState = (TextView) view.findViewById(R.id.txtviewEstado);
-            this.txtObservation = (TextView) view.findViewById(R.id.txtviewObservaciones);
+            this.txtDispositive = (TextView) view.findViewById(R.id.txtviewDispositive);
+            this.txtState = (TextView) view.findViewById(R.id.txtviewState);
+            this.txtObservation = (TextView) view.findViewById(R.id.txtviewObservations);
         }
     }
 
