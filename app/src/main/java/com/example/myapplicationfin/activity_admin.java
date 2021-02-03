@@ -63,7 +63,7 @@ public class activity_admin extends AppCompatActivity implements
                 throw new IllegalStateException("Unexpected value: " + menuItem.getItemId());
         }
         if (fragmentTransaction) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.contenido_administrador, fragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_administrator, fragment).commit();
             menuItem.setChecked(true);
             getSupportActionBar().setTitle("");
         }

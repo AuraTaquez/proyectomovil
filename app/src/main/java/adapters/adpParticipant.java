@@ -18,15 +18,15 @@ import clases.ParticipantModel;
 
 public class adpParticipant extends RecyclerView.Adapter<adpParticipant.ViewHolder> {
 
-    private List<ParticipantModel> datos;
-    public adpParticipant(List<ParticipantModel> datos){this.datos = datos;}
+    private List<ParticipantModel> data;
+    public adpParticipant(List<ParticipantModel> data){this.data = data;}
 
     public static boolean showShimmer = true;
     int cantShimmer = 8;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         ShimmerFrameLayout shimmerFrameLayout;
-        TextView txtParticipante;
+        TextView txtParticipant;
         ImageView btnShimmer;
         TextView txtCel;
         ImageView btnShimmer1;
@@ -36,7 +36,7 @@ public class adpParticipant extends RecyclerView.Adapter<adpParticipant.ViewHold
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             shimmerFrameLayout = itemView.findViewById(R.id.shimmer);
-            txtParticipante = (TextView) itemView.findViewById(R.id.txtNombreAutor);
+            txtParticipant = (TextView) itemView.findViewById(R.id.txtNombreAutor);
             btnShimmer = itemView.findViewById(R.id.imageViewliPart);
             txtCel = (TextView) itemView.findViewById(R.id.txtCelular);
             btnShimmer1 = itemView.findViewById(R.id.imageViewliTel);
@@ -44,8 +44,8 @@ public class adpParticipant extends RecyclerView.Adapter<adpParticipant.ViewHold
             btnShimmer2 = itemView.findViewById(R.id.imageViewliEm);
         }
 
-        public void add_datos(ParticipantModel valor) {
-            txtParticipante.setText(valor.getNombre());
+        public void add_data(ParticipantModel valor) {
+            txtParticipant.setText(valor.getNombre());
             txtCel.setText(valor.getTelefono());
             txtEmail.setText(valor.getEmail());
         }
@@ -70,10 +70,10 @@ public class adpParticipant extends RecyclerView.Adapter<adpParticipant.ViewHold
             {
                 holder.shimmerFrameLayout.stopShimmer();
                 holder.shimmerFrameLayout.setShimmer(null);
-                holder.txtParticipante.setBackground(null);
+                holder.txtParticipant.setBackground(null);
                 holder.txtCel.setBackground(null);
                 holder.txtEmail.setBackground(null);
-                holder.add_datos(datos.get(position));
+                holder.add_data(data.get(position));
             }
         }
         catch (Exception e){
@@ -83,7 +83,7 @@ public class adpParticipant extends RecyclerView.Adapter<adpParticipant.ViewHold
     @Override
     public int getItemCount() {
         try{
-            return showShimmer ? cantShimmer : datos.size();
+            return showShimmer ? cantShimmer : data.size();
         }catch (Exception e) {return cantShimmer;}
     }
 }

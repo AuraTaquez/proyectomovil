@@ -39,8 +39,8 @@ public class activity_patient extends AppCompatActivity implements
 
         navView = findViewById(R.id.nav_view);
         Menu m = navView.getMenu();
-        m.removeItem(R.id.Umenu_seccion_3);
-        m.findItem(R.id.Umenu_seccion_2).setIcon(R.drawable.icon_see_progress).setTitle("Mis Terapias");
+        m.removeItem(R.id.Umenu_section_3);
+        m.findItem(R.id.Umenu_section_2).setIcon(R.drawable.icon_see_progress).setTitle("Mis Terapias");
         navView.setNavigationItemSelectedListener(this);
     }
 
@@ -49,11 +49,11 @@ public class activity_patient extends AppCompatActivity implements
         fragmentTransaction = false;
         fragment = null;
         switch (menuItem.getItemId()) {
-            case R.id.Umenu_seccion_1:
+            case R.id.Umenu_section_1:
                 fragment = new fragment_miinfo();
                 fragmentTransaction = true;
                 break;
-            case R.id.Umenu_seccion_2:
+            case R.id.Umenu_section_2:
                 fragment = new fragment_terapias();
                 fragmentTransaction = true;
                 break;
@@ -70,8 +70,8 @@ public class activity_patient extends AppCompatActivity implements
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_toolbar2,menu);
-        MenuItem m = menu.findItem(R.id.btnTipo);
-        m.setTitle("PACIENTE");
+        MenuItem m = menu.findItem(R.id.btnType);
+        m.setTitle("PATIENT");
         return true;
     }
 
@@ -84,7 +84,7 @@ public class activity_patient extends AppCompatActivity implements
                 drawerLayout.openDrawer(GravityCompat.START);
                 break;
         }
-        if(id == R.id.btnCerrarSesion) {
+        if(id == R.id.btnSign_off) {
             Intent intent = new Intent(this, MainActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
             startActivity(intent);
         }

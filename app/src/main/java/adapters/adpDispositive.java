@@ -9,13 +9,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplicationfin.R;
-
-
 import java.util.ArrayList;
 
 import clases.DispositiveModel;
 
 public class adpDispositive extends RecyclerView.Adapter<adpDispositive.ViewHolderDIS>{
+
     private int resource;
     private ArrayList<DispositiveModel> dispositiveList;
 
@@ -44,7 +43,6 @@ public class adpDispositive extends RecyclerView.Adapter<adpDispositive.ViewHold
     public int getItemCount() {
         return dispositiveList.size();
     }
-
 
     public class ViewHolderDIS extends RecyclerView.ViewHolder{
         private TextView txtMAC;

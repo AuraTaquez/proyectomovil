@@ -37,18 +37,6 @@
             app:srcCompat="@drawable/icon_info"
             tools:ignore="VectorDrawableCompat" />
 
-        <TextView
-            android:id="@+id/textView"
-            style="TextAppearance.AppCompat.Title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="Más Información"
-            android:textColor="#FFFFFF"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cvInfo"
             android:layout_width="match_parent"
@@ -88,7 +76,7 @@
                     android:layout_marginStart="35dp"
                     android:layout_marginTop="0dp"
                     android:layout_marginEnd="10dp"
-                    android:text="Más Información"
+                    android:text="More information"
                     android:textAlignment="textStart"
                     android:textColor="#C7C7C7"
                     android:textStyle="italic" />
@@ -115,7 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="190dp"
-            android:text="Participantes"
+            android:text="Participants"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -159,13 +147,13 @@
                     tools:ignore="VectorDrawableCompat" />
 
                 <TextView
-                    android:id="@+id/txtMen"
+                    android:id="@+id/txtFooter"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="35dp"
                     android:layout_marginEnd="10dp"
-                    android:text="2021 Todos los derechos reservados | PI-VI IoTRehabilitaciónn"
+                    android:text="2021 All rights reserved | IoTRehabilitation"
                     android:textAlignment="textStart"
                     android:textColor="@color/white" />
 
