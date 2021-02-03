@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout_terapeuta"
+    android:id="@+id/drawer_layout_therapist"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -15,12 +15,12 @@
         android:orientation="vertical">
 
         <include
-            android:id="@+id/toolbar_terapeuta"
+            android:id="@+id/toolbar_therapist"
             layout="@layout/toolbar2">
         </include>
 
         <FrameLayout
-            android:id="@+id/contenido_terapeuta"
+            android:id="@+id/content_therapist"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -29,11 +29,11 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/txtTitulo"
+                    android:id="@+id/txtTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="36dp"
-                    android:text="Actividades Terapeuta"
+                    android:text="Therapist Activities"
                     android:textColor="#0180DF"
                     android:textSize="30sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +51,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.691"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+                    app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
 
                 <TextView
                     android:id="@+id/txtTitulo3"
@@ -87,7 +87,7 @@
                     app:layout_constraintEnd_toStartOf="@+id/txtRegistrarPaciente"
                     app:layout_constraintHorizontal_bias="0.819"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txtTitulo"
+                    app:layout_constraintTop_toBottomOf="@+id/txtTitle"
                     app:srcCompat="@android:drawable/ic_menu_save" />
 
                 <ImageButton
@@ -157,7 +157,7 @@
         android:theme="@style/NavView">
 
         <include
-            android:id="@+id/footer_terapeuta"
+            android:id="@+id/footer_therapist"
             layout="@layout/footer">
         </include>
 

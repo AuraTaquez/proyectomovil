@@ -18,7 +18,7 @@
             android:layout_height="match_parent">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cvParticipantes"
+                android:id="@+id/cvParticipants"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
@@ -47,7 +47,7 @@
                         app:tint="#FFFFFF" />
 
                     <TextView
-                        android:id="@+id/txtNombreAutor"
+                        android:id="@+id/txtAuthorName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -68,7 +68,7 @@
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
-                        android:id="@+id/txtCelular"
+                        android:id="@+id/txtCel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"

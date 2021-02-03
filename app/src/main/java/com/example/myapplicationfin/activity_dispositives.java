@@ -42,7 +42,7 @@ public class activity_dispositives extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dispositivos);
+        setContentView(R.layout.activity_dispositives);
 
         refDataBase = FirebaseDatabase.getInstance().getReference();
         refFireStore = FirebaseFirestore.getInstance();

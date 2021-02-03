@@ -29,9 +29,9 @@ public class activity_patient extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_paciente);
+        setContentView(R.layout.activity_patient);
 
-        toolbar = findViewById(R.id.toolbar_paciente);
+        toolbar = findViewById(R.id.toolbar_patient);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.icon_menu);
@@ -40,7 +40,7 @@ public class activity_patient extends AppCompatActivity implements
         navView = findViewById(R.id.nav_view);
         Menu m = navView.getMenu();
         m.removeItem(R.id.Umenu_section_3);
-        m.findItem(R.id.Umenu_section_2).setIcon(R.drawable.icon_see_progress).setTitle("Mis Terapias");
+        m.findItem(R.id.Umenu_section_2).setIcon(R.drawable.icon_see_progress).setTitle("My Therapies");
         navView.setNavigationItemSelectedListener(this);
     }
 
@@ -59,7 +59,7 @@ public class activity_patient extends AppCompatActivity implements
                 break;
         }
         if(fragmentTransaction) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.contenido_paciente, fragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_patient, fragment).commit();
             menuItem.setChecked(true);
             getSupportActionBar().setTitle("");
         }
@@ -80,7 +80,7 @@ public class activity_patient extends AppCompatActivity implements
         int id = item.getItemId();
         switch (item.getItemId()) {
             case android.R.id.home:
-                drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout_paciente);
+                drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout_patient);
                 drawerLayout.openDrawer(GravityCompat.START);
                 break;
         }

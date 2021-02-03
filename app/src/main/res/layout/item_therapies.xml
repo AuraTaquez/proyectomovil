@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardViewTerapias"
+        android:id="@+id/cardViewTherapies"
         style="@style/CardView.Light"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,7 +22,7 @@
             android:paddingBottom="12dp">
 
             <ImageView
-                android:id="@+id/imgDispositivo"
+                android:id="@+id/imgDispositive"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="fitCenter"
@@ -33,136 +33,136 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/lblTipoTerapia"
+                android:id="@+id/lblTherapyType"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imgDispositivo"
+                android:layout_below="@+id/imgDispositive"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Tipo de Terapia:"
+                android:text="Therapy Type:"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtTipoTerapia"
+                android:id="@+id/txtTherapyType"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/imgDispositivo"
+                android:layout_below="@+id/imgDispositive"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_toEndOf="@+id/lblTipoTerapia"
-                android:text="Tipo de Terapia" />
+                android:layout_toEndOf="@+id/lblTherapyType"
+                android:text="Therapy Type" />
 
             <TextView
-                android:id="@+id/lblDispositivo"
+                android:id="@+id/lblDispositive"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblTipoTerapia"
+                android:layout_below="@+id/lblTherapyType"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Dispositivo:"
+                android:text="Dispositive:"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtDispositivo"
+                android:id="@+id/txtDispositive"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtTipoTerapia"
-                android:layout_toEndOf="@+id/lblDispositivo"
+                android:layout_below="@+id/txtTherapyType"
+                android:layout_toEndOf="@+id/lblDispositive"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Dispositivo" />
+                android:text="Dispositive" />
 
             <TextView
-                android:id="@+id/lblFecha"
+                android:id="@+id/lblDate"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblDispositivo"
+                android:layout_below="@+id/lblDispositive"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Fecha:"
+                android:text="Date:"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtFecha"
+                android:id="@+id/txtDate"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtDispositivo"
-                android:layout_toEndOf="@+id/lblFecha"
+                android:layout_below="@+id/txtDispositive"
+                android:layout_toEndOf="@+id/lblDate"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Fecha" />
+                android:text="Date" />
 
             <TextView
-                android:id="@+id/lblAciertos"
+                android:id="@+id/lblHits"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblFecha"
+                android:layout_below="@+id/lblDate"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Aciertos:"
+                android:text="Hits:"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtAciertos"
+                android:id="@+id/txtHits"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtFecha"
-                android:layout_toEndOf="@+id/lblAciertos"
+                android:layout_below="@+id/txtDate"
+                android:layout_toEndOf="@+id/lblHits"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Aciertos" />
+                android:text="Hits" />
 
             <TextView
-                android:id="@+id/lblHoraInicio"
+                android:id="@+id/lblStartTime"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblAciertos"
+                android:layout_below="@+id/lblHits"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Hora Inicio:"
+                android:text="Start Time:"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtHoraInicio"
+                android:id="@+id/txtStartTime"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtAciertos"
+                android:layout_below="@+id/txtHits"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_toEndOf="@+id/lblHoraInicio"
-                android:text="Hora Inicio" />
+                android:layout_toEndOf="@+id/lblStartTime"
+                android:text="Start Time" />
 
             <TextView
-                android:id="@+id/lblHoraFin"
+                android:id="@+id/lblEndTime"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/lblHoraInicio"
+                android:layout_below="@+id/lblStartTime"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Hora Fin:"
+                android:text="End Time:"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtHoraFin"
+                android:id="@+id/txtEndTime"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtHoraInicio"
+                android:layout_below="@+id/txtStartTime"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:layout_toEndOf="@+id/lblHoraFin"
-                android:text="Hora Fin" />
+                android:layout_toEndOf="@+id/lblEndTime"
+                android:text="End Time" />
 
         </RelativeLayout>
 

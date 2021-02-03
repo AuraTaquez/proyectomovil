@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout_paciente"
+    android:id="@+id/drawer_layout_patient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity_patient">
@@ -14,12 +14,12 @@
         android:orientation="vertical">
 
         <include
-            android:id="@+id/toolbar_paciente"
+            android:id="@+id/toolbar_patient"
             layout="@layout/toolbar2">
         </include>
 
         <FrameLayout
-            android:id="@+id/contenido_paciente"
+            android:id="@+id/content_patient"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </FrameLayout>
@@ -40,7 +40,7 @@
         android:theme="@style/NavView">
 
         <include
-            android:id="@+id/footer_paciente"
+            android:id="@+id/footer_patient"
             layout="@layout/footer">
         </include>
 

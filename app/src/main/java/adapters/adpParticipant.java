@@ -36,9 +36,9 @@ public class adpParticipant extends RecyclerView.Adapter<adpParticipant.ViewHold
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             shimmerFrameLayout = itemView.findViewById(R.id.shimmer);
-            txtParticipant = (TextView) itemView.findViewById(R.id.txtNombreAutor);
+            txtParticipant = (TextView) itemView.findViewById(R.id.txtAuthorName);
             btnShimmer = itemView.findViewById(R.id.imageViewliPart);
-            txtCel = (TextView) itemView.findViewById(R.id.txtCelular);
+            txtCel = (TextView) itemView.findViewById(R.id.txtCel);
             btnShimmer1 = itemView.findViewById(R.id.imageViewliTel);
             txtEmail = (TextView) itemView.findViewById(R.id.txtEmail);
             btnShimmer2 = itemView.findViewById(R.id.imageViewliEm);
@@ -55,7 +55,7 @@ public class adpParticipant extends RecyclerView.Adapter<adpParticipant.ViewHold
     @Override
     public adpParticipant.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = null;
-        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_participante,null,false);
+        view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_participant,null,false);
         return new ViewHolder(view);
     }
 

@@ -9,7 +9,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/imgFondo"
         android:background="#C3DDF0">
 
         <!--<TextView
@@ -27,12 +26,12 @@
             android:textStyle="bold" />-->
 
         <TextView
-            android:id="@+id/txtUsuario"
+            android:id="@+id/txtUserFooter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="10dp"
-            android:text="NombreUsuario"
+            android:text="Username"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large.Inverse"
             android:textColor="#313131"

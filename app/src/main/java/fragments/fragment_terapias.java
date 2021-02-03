@@ -2,7 +2,6 @@ package fragments;
 
 import android.os.Bundle;
 
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -64,10 +63,10 @@ public class fragment_terapias extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_terapias, container, false);
+        View view = inflater.inflate(R.layout.fragment_therapies, container, false);
 
         //Vincular instancia del recyclerview
-        rcvTerapias = (RecyclerView)view.findViewById(R.id.rcvTerapias);
+        rcvTerapias = (RecyclerView)view.findViewById(R.id.rcvTherapies);
         //Definir la forma de la lista vertical
         rcvTerapias.setLayoutManager(new LinearLayoutManager(getContext()));
         // Inflate the layout for this fragment

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/imgFondo"
+        android:id="@+id/imgBackground"
         android:layout_width="match_parent"
         android:layout_height="175dp"
         android:background="#C3DDF0"

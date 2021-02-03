@@ -28,9 +28,9 @@ public class activity_therapist extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_terapeuta);
+        setContentView(R.layout.activity_therapist);
 
-        toolbar = findViewById(R.id.toolbar_terapeuta);
+        toolbar = findViewById(R.id.toolbar_therapist);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.icon_menu);
@@ -38,8 +38,8 @@ public class activity_therapist extends AppCompatActivity implements
 
         navView = findViewById(R.id.nav_view_terapeuta);
         Menu m = navView.getMenu();
-        m.findItem(R.id.Umenu_section_2).setIcon(R.drawable.icon_patients).setTitle("Pacientes");
-        m.findItem(R.id.Umenu_section_3).setIcon(R.drawable.icon_see_progress).setTitle("Prescripciones");
+        m.findItem(R.id.Umenu_section_2).setIcon(R.drawable.icon_patients).setTitle("Patients");
+        m.findItem(R.id.Umenu_section_3).setIcon(R.drawable.icon_see_progress).setTitle("Prescriptions");
         navView.setNavigationItemSelectedListener(this);
     }
 
@@ -60,7 +60,7 @@ public class activity_therapist extends AppCompatActivity implements
                 break;
         }
         if(fragmentTransaction) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.contenido_terapeuta, fragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.content_therapist, fragment).commit();
             item.setChecked(true);
             getSupportActionBar().setTitle("");
         }
@@ -81,7 +81,7 @@ public class activity_therapist extends AppCompatActivity implements
         int id = item.getItemId();
         switch (item.getItemId()) {
             case android.R.id.home:
-                drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout_terapeuta);
+                drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout_therapist);
                 drawerLayout.openDrawer(GravityCompat.START);
                 break;
         }

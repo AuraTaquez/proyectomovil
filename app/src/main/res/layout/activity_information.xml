@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
-            android:text="Información"
+            android:text="Information"
             android:textColor="#FFFFFF"
             android:textSize="24sp"
             android:textStyle="bold" />
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="110dp"
-            android:text="IoT y la Rehabilitación"
+            android:text="IoT and Rehabilitation"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="360dp"
-            android:text="Acerca del Sistema"
+            android:text="About the System"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:textStyle="bold" />
