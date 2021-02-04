@@ -1,9 +1,10 @@
 package clases;
 
 public class UserModel {
-    String address="", birthdate="", cid="", email="", pass = "", names="", surnames="", phone="", role = "";
+    String id="", address="", birthdate="", cid="", email="", pass = "", names="", surnames="", phone="", role = "";
 
-    public UserModel(String address, String birthdate, String cid, String email, String pass, String names, String surnames, String pone, String role) {
+    public UserModel(String id, String address, String birthdate, String cid, String email, String pass, String names, String surnames, String pone, String role) {
+        this.id = id;
         this.address = address;
         this.birthdate = birthdate;
         this.cid = cid;
@@ -13,6 +14,14 @@ public class UserModel {
         this.surnames = surnames;
         this.phone = pone;
         this.role = role;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getAddress() {

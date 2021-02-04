@@ -14,6 +14,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -27,8 +33,9 @@ import clases.UserModel;
 
 public class MainActivity extends AppCompatActivity {
 
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-    CollectionReference refcollection = db.collection("users");
+    DatabaseReference refDataBase;
+    FirebaseFirestore refFireStore;
+    CollectionReference refCollection;
     public ArrayList<UserModel> datauser = new ArrayList<>();
     Bundle b = new Bundle();
     Toolbar toolbar;
@@ -46,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
 
+        refDataBase = FirebaseDatabase.getInstance().getReference("usuario");
+        refFireStore = FirebaseFirestore.getInstance();
+        refCollection = refFireStore.collection("users");
+
         txtUser=(TextView) findViewById(R.id.txtUser);
         txtPass=(TextView) findViewById(R.id.txtPassword);
 
@@ -54,14 +65,15 @@ public class MainActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                queryInit();
+                //queryInitFireStore();
+                queryInitRealTime();
             }
         });
     }
 
-    public void queryInit(){
+    public void queryInitFireStore(){
         if(!txtUser.getText().toString().isEmpty() && !txtPass.getText().toString().isEmpty()) {
-            refcollection.whereEqualTo("email", txtUser.getText().toString())
+            refCollection.whereEqualTo("email", txtUser.getText().toString())
                     .addSnapshotListener(new EventListener<QuerySnapshot>() {
                         @Override
                         public void onEvent(@Nullable QuerySnapshot snapshots, @Nullable FirebaseFirestoreException error) {
@@ -83,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                                 surnames = doc.getDocument().get("surnames").toString();
                                 phone = doc.getDocument().get("phone").toString();
                                 role = doc.getDocument().get("role").toString();
-                                datauser.add(new UserModel(address, birthdate, cid, email, pass, names, surnames, phone, role));
+                                datauser.add(new UserModel(id, address, birthdate, cid, email, pass, names, surnames, phone, role));
                             }
                             //Toast.makeText(MainActivity.this,"I have found "+count+" users",Toast.LENGTH_LONG).show();
                             if (count == 1) {
@@ -95,6 +107,49 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "WARNING \nUser not found", Toast.LENGTH_LONG).show();
                         }
                     });
+        }
+        else
+            Toast.makeText(MainActivity.this,"WARNING \nYou must fill all the fields",Toast.LENGTH_LONG).show();
+    }
+
+    public void queryInitRealTime(){
+        if(!txtUser.getText().toString().isEmpty() && !txtPass.getText().toString().isEmpty()) {
+            Query query = refDataBase.orderByChild("email").equalTo(txtUser.getText().toString());
+            query.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    int count = 0;
+                    for (DataSnapshot datasnapshot : snapshot.getChildren()) {
+                        count++;
+                        //doc.getDocument().getId();
+                        id = datasnapshot.getKey();
+                        address = datasnapshot.child("address").getValue().toString();
+                        birthdate = datasnapshot.child("birthdate").getValue().toString();
+                        cid = datasnapshot.child("cid").getValue().toString();
+                        email = datasnapshot.child("email").getValue().toString();
+                        pass = datasnapshot.child("password").getValue().toString();
+                        names = datasnapshot.child("names").getValue().toString();
+                        surnames = datasnapshot.child("lastnames").getValue().toString();
+                        phone = datasnapshot.child("phone").getValue().toString();
+                        role = datasnapshot.child("role").getValue().toString();
+                        datauser.add(new UserModel(id, address, birthdate, cid, email, pass, names, surnames, phone, role));
+                    }
+                    //Toast.makeText(MainActivity.this,"I have found "+count+" users",Toast.LENGTH_LONG).show();
+                    if(count == 1){
+                        if(txtPass.getText().toString().equals(pass))
+                            init(role);
+                        else
+                            Toast.makeText(MainActivity.this,"WARNING \nIncorrect password",Toast.LENGTH_LONG).show();
+                    }
+                    else
+                        Toast.makeText(MainActivity.this,"WARNING \nUser not found",Toast.LENGTH_LONG).show();
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
         }
         else
             Toast.makeText(MainActivity.this,"WARNING \nYou must fill all the fields",Toast.LENGTH_LONG).show();
