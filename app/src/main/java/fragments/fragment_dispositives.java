@@ -14,8 +14,11 @@ import android.view.ViewGroup;
 import com.example.myapplicationfin.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -81,7 +84,8 @@ public class fragment_dispositives extends Fragment {
         mRecyclerView = (RecyclerView) view.findViewById(R.id.rcvDispositives);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        getDispositivesFromFireStore();
+        getDispositivesFromFireBase();
+        //getDispositivesFromFireStore();
         return view;
     }
 
@@ -108,5 +112,32 @@ public class fragment_dispositives extends Fragment {
                         }
                     }
                 });
+    }
+
+    private void getDispositivesFromFireBase(){
+        refDataBase.child("device").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists()){
+                    mDispositivesList.clear();
+                    for(DataSnapshot ds: snapshot.getChildren()){
+                        String ID = ds.getKey();
+                        String MAC = ds.child("mac").getValue().toString();
+                        String dispositive = ds.child("device").getValue().toString();
+                        String state = ds.child("status").getValue().toString();
+                        String observation = ds.child("observation").getValue().toString();
+                        mDispositivesList.add(new DispositiveModel(ID, MAC, dispositive, state, observation));
+
+                    }
+                    mAdapter = new adpDispositive(mDispositivesList, R.layout.item_dispositives);
+                    mRecyclerView.setAdapter(mAdapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

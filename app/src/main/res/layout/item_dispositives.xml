@@ -5,27 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txtviewMAC_"
-            android:layout_width="138dp"
-            android:layout_height="match_parent"
-            android:text="  MAC :"
-            android:textSize="18sp"
-            android:textColor="@color/black" />
-
-        <TextView
-            android:id="@+id/txtviewMAC"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="mac..."
-            android:textSize="18sp" />
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -45,6 +25,28 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="dispositive..."
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtviewMAC_"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:text="  MAC :"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtviewMAC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="mac..."
             android:textSize="18sp" />
 
     </LinearLayout>

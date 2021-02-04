@@ -9,7 +9,6 @@
         android:roundIcon="@drawable/logsriot"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".activity_dispositives"></activity>
         <activity android:name=".Info_admin" />
         <activity android:name=".registrar_paciente" />
         <activity android:name=".activity_patient" />
