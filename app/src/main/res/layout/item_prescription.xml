@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtviewPacient_"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:text="  Pacient:"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txtviewPacient"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="pacient..."
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtviewTypeTherapy_"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:text="  Type Therapy:"
+            android:textSize="18sp"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:id="@+id/txtviewTypeTherapy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="type therapy..."
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtviewDevice_"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:text="  Device:"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txtviewDevice"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="device..."
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtviewDate_"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:text="  Date:"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txtviewDate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="date..."
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtviewStatus_"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:text="  Status:"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txtviewStatus"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="status..."
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtviewCommentary_"
+            android:layout_width="138dp"
+            android:layout_height="match_parent"
+            android:text="  Commentary:"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/txtviewCommentary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="commentary..."
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="?android:attr/listDivider"
+        android:foreground="@color/black"/>
+
+</LinearLayout>

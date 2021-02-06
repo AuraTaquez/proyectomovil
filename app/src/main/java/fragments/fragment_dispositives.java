@@ -78,6 +78,7 @@ public class fragment_dispositives extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dispositives, container, false);
+
         refDataBase = FirebaseDatabase.getInstance().getReference();
         refFireStore = FirebaseFirestore.getInstance();
 

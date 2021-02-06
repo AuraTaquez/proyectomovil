@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import com.google.android.material.navigation.NavigationView;
 
 import fragments.fragment_myinfo;
+import fragments.fragment_prescription;
 
 public class activity_therapist extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -61,7 +62,9 @@ public class activity_therapist extends AppCompatActivity implements
 
                 break;
             case R.id.Umenu_section_3:
-
+                fragment = new fragment_prescription();
+                fragment.setArguments(b);
+                fragmentTransaction = true;
                 break;
         }
         if(fragmentTransaction) {
