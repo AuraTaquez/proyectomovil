@@ -27,9 +27,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 import clases.UserModel;
+
+import static clases.Encriptar.SHA1;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -136,10 +140,16 @@ public class MainActivity extends AppCompatActivity {
                     }
                     //Toast.makeText(MainActivity.this,"I have found "+count+" users",Toast.LENGTH_LONG).show();
                     if(count == 1){
-                        if(txtPass.getText().toString().equals(pass))
-                            init(role);
-                        else
-                            Toast.makeText(MainActivity.this,"WARNING \nIncorrect password",Toast.LENGTH_LONG).show();
+                        try {
+                            if(SHA1(txtPass.getText().toString()).equals(pass))
+                                init(role);
+                            else
+                                Toast.makeText(MainActivity.this,"WARNING \nIncorrect password",Toast.LENGTH_LONG).show();
+                        } catch (NoSuchAlgorithmException e) {
+                            e.printStackTrace();
+                        } catch (UnsupportedEncodingException e) {
+                            e.printStackTrace();
+                        }
                     }
                     else
                         Toast.makeText(MainActivity.this,"WARNING \nUser not found",Toast.LENGTH_LONG).show();
@@ -177,6 +187,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void init(String type)
     {
+
+        Intent intent = new Intent(this, activity_patient.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+        sendDataActivity();
+        intent.putExtras(b);
+        startActivity(intent);
+        /*
         if(type.equals("A"))
         {
             Intent intent = new Intent(this, activity_admin.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -197,7 +213,7 @@ public class MainActivity extends AppCompatActivity {
             sendDataActivity();
             intent.putExtras(b);
             startActivity(intent);
-        }
+        }*/
     }
 
     public void sendDataActivity(){

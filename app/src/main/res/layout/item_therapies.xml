@@ -24,7 +24,7 @@
             <ImageView
                 android:id="@+id/imgDispositive"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="125dp"
                 android:scaleType="fitCenter"
                 android:src="@drawable/icon_dispositives"
                 app:layout_constraintDimensionRatio="H,16:9"
@@ -106,63 +106,19 @@
                 android:layout_below="@+id/lblDate"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Hits:"
+                android:text="Terapista Email:"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtHits"
+                android:id="@+id/txtTerapistaEmail"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtDate"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/lblHits"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:text="Hits" />
-
-            <TextView
-                android:id="@+id/lblStartTime"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/lblHits"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:text="Start Time:"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtStartTime"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtHits"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_toEndOf="@+id/lblStartTime"
-                android:text="Start Time" />
-
-            <TextView
-                android:id="@+id/lblEndTime"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_width="150dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/lblStartTime"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:text="End Time:"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txtEndTime"
-                style="@style/TextAppearance.AppCompat.Body1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtStartTime"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="5dp"
-                android:layout_toEndOf="@+id/lblEndTime"
-                android:text="End Time" />
+                android:text="email" />
 
         </RelativeLayout>
 

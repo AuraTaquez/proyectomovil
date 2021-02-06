@@ -1,67 +1,47 @@
 package clases;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
 public class PrescriptionModel {
-    String Id, Device, Pacient, Status, typeTherapy, Commentary, date;
+    String id,typetheraphy,device,date,therapistemail,image;
 
-    public PrescriptionModel() {
-    }
-
-    public PrescriptionModel(String id, String Pacient, String Device, String status, String typeTherapy, String commentary, String date) {
-        Id = id;
-        this.Pacient = Pacient;
-        this.Device = Device;
-        this.Status = status;
-        this.typeTherapy = typeTherapy;
-        this.Commentary = commentary;
+    public PrescriptionModel(String id, String typetheraphy, String device, String date, String therapistemail, String image) {
+        this.id = id;
+        this.typetheraphy = typetheraphy;
+        this.device = device;
         this.date = date;
+        this.therapistemail = therapistemail;
+        this.image = image;
     }
+    public PrescriptionModel() {
 
+    }
     public String getId() {
-        return Id;
+        return id;
     }
 
     public void setId(String id) {
-        Id = id;
+        this.id = id;
+    }
+
+    public String getTypetheraphy() {
+        return typetheraphy;
+    }
+
+    public void setTypetheraphy(String typetheraphy) {
+        this.typetheraphy = typetheraphy;
     }
 
     public String getDevice() {
-        return Device;
+        return device;
     }
 
     public void setDevice(String device) {
-        this.Device = device;
-    }
-
-    public String getPacient() {
-        return Pacient;
-    }
-
-    public void setPacient(String pacient) {
-        this.Pacient = pacient;
-    }
-
-    public String getStatus() {
-        return Status;
-    }
-
-    public void setStatus(String status) {
-        Status = status;
-    }
-
-    public String getTypeTherapy() {
-        return typeTherapy;
-    }
-
-    public void setTypeTherapy(String typeTherapy) {
-        this.typeTherapy = typeTherapy;
-    }
-
-    public String getCommentary() {
-        return Commentary;
-    }
-
-    public void setCommentary(String commentary) {
-        Commentary = commentary;
+        this.device = device;
     }
 
     public String getDate() {
@@ -71,6 +51,40 @@ public class PrescriptionModel {
     public void setDate(String date) {
         this.date = date;
     }
+
+    public String getTherapistemail() {
+        return therapistemail;
+    }
+
+    public void setTherapistemail(String therapistemail) {
+        this.therapistemail = therapistemail;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public PrescriptionModel(JSONObject a) throws JSONException {
+        //id =  a.getString("id");
+        typetheraphy =  a.getString("typetheraphy");
+        device =  a.getString("iddevice");
+        date = a.getString("date");
+        therapistemail = a.getString("therapistemail");
+        image = a.getString("image");
+    }
+
+    public static ArrayList<PrescriptionModel> JsonObjectsBuild(JSONArray datos) throws JSONException {
+        ArrayList<PrescriptionModel> prescription = new ArrayList<>();
+        for (int i = 0; i < datos.length(); i++) {
+            prescription.add(new PrescriptionModel(datos.getJSONObject(i)));
+        }
+        return prescription;
+    }
+
 }
 
 
