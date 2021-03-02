@@ -10,5 +10,8 @@
         <item android:title=""
             android:id="@+id/Umenu_section_3"
             android:icon="@drawable/icon_see_progress" />
+        <item
+            android:id="@+id/Umenu_section_4"
+            android:title="Video" />
     </group>
 </menu>

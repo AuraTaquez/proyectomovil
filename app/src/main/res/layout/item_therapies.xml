@@ -62,11 +62,11 @@
                 android:layout_below="@+id/lblTherapyType"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Dispositive:"
+                android:text="MAC:"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtDispositive"
+                android:id="@+id/txtMac"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/txtDispositive"
+                android:layout_below="@+id/txtMac"
                 android:layout_toEndOf="@+id/lblDate"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
@@ -106,11 +106,11 @@
                 android:layout_below="@+id/lblDate"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
-                android:text="Terapista Email:"
+                android:text="Data:"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtTerapistaEmail"
+                android:id="@+id/txtInteractions"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -118,7 +118,7 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/lblHits"
-                android:text="email" />
+                android:text="interacciones" />
 
         </RelativeLayout>
 

@@ -6,16 +6,38 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
+import adapters.adpExercise;
+import adapters.adpPrescription;
+import clases.Ejercicios;
+import clases.PrescriptionModel;
+import fragments.fragment_exercise;
 import fragments.fragment_myinfo;
+import fragments.fragment_prescription;
 import fragments.fragment_therapies;
+import fragments.fragment_video;
 
 public class activity_patient extends AppCompatActivity implements
         NavigationView.OnNavigationItemSelectedListener {
@@ -26,6 +48,7 @@ public class activity_patient extends AppCompatActivity implements
     Toolbar toolbar;
     Fragment fragment;
     boolean fragmentTransaction;
+    TextView txtUserFooter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +56,7 @@ public class activity_patient extends AppCompatActivity implements
         setContentView(R.layout.activity_patient);
 
         b = this.getIntent().getExtras();
+
         sendDataActivity();
 
         toolbar = findViewById(R.id.toolbar_patient);
@@ -43,10 +67,18 @@ public class activity_patient extends AppCompatActivity implements
 
         navView = findViewById(R.id.nav_view);
         Menu m = navView.getMenu();
-        m.removeItem(R.id.Umenu_section_3);
-        m.findItem(R.id.Umenu_section_2).setIcon(R.drawable.icon_see_progress).setTitle("My Therapies");
+        m.findItem(R.id.Umenu_section_2).setIcon(R.drawable.icon_see_progress).setTitle("My Prescription");
+        m.findItem(R.id.Umenu_section_3).setIcon(R.drawable.ic_baseline_fitness_center_24).setTitle("My Exercise");
+        m.findItem(R.id.Umenu_section_4).setIcon(R.drawable.ic_baseline_ondemand_video_24).setTitle("Demonstration Exercise");
         navView.setNavigationItemSelectedListener(this);
+
+        txtUserFooter = findViewById(R.id.txtUserFooter);
+        txtUserFooter.setText(b.getString("email"));
+
     }
+
+
+
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -59,7 +91,20 @@ public class activity_patient extends AppCompatActivity implements
                 fragmentTransaction = true;
                 break;
             case R.id.Umenu_section_2:
-                fragment = new fragment_therapies();
+                fragment = new fragment_prescription();
+                fragment.setArguments(b);
+                fragmentTransaction = true;
+                break;
+
+            case R.id.Umenu_section_3:
+                fragment = new fragment_exercise();
+                fragment.setArguments(b);
+                fragmentTransaction = true;
+                break;
+
+            case R.id.Umenu_section_4:
+                fragment = new fragment_video();
+                fragment.setArguments(b);
                 fragmentTransaction = true;
                 break;
         }

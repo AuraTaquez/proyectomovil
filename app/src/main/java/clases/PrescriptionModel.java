@@ -1,25 +1,8 @@
 package clases;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-
 public class PrescriptionModel {
-    String id,typetheraphy,device,date,therapistemail,image;
+    String id,typetheraphy,device,date,status,commentary;
 
-    public PrescriptionModel(String id, String typetheraphy, String device, String date, String therapistemail, String image) {
-        this.id = id;
-        this.typetheraphy = typetheraphy;
-        this.device = device;
-        this.date = date;
-        this.therapistemail = therapistemail;
-        this.image = image;
-    }
-    public PrescriptionModel() {
-
-    }
     public String getId() {
         return id;
     }
@@ -52,39 +35,32 @@ public class PrescriptionModel {
         this.date = date;
     }
 
-    public String getTherapistemail() {
-        return therapistemail;
+    public String getStatus() {
+        return status;
     }
 
-    public void setTherapistemail(String therapistemail) {
-        this.therapistemail = therapistemail;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
-    public String getImage() {
-        return image;
+    public String getCommentary() {
+        return commentary;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public PrescriptionModel(String id, String typetheraphy, String device, String date, String status, String commentary) {
+        this.id = id;
+        this.typetheraphy = typetheraphy;
+        this.device = device;
+        this.date = date;
+        this.status = status;
+        this.commentary = commentary;
     }
+    public PrescriptionModel() {
 
-    public PrescriptionModel(JSONObject a) throws JSONException {
-        //id =  a.getString("id");
-        typetheraphy =  a.getString("typetheraphy");
-        device =  a.getString("iddevice");
-        date = a.getString("date");
-        therapistemail = a.getString("therapistemail");
-        image = a.getString("image");
     }
-
-    public static ArrayList<PrescriptionModel> JsonObjectsBuild(JSONArray datos) throws JSONException {
-        ArrayList<PrescriptionModel> prescription = new ArrayList<>();
-        for (int i = 0; i < datos.length(); i++) {
-            prescription.add(new PrescriptionModel(datos.getJSONObject(i)));
-        }
-        return prescription;
+    public void setCommentary(String commentary) {
+        this.commentary = commentary;
     }
-
 }
 
 

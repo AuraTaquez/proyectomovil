@@ -4,28 +4,47 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
+import android.view.animation.LayoutAnimationController;
+import android.widget.Toast;
 
+import com.example.myapplicationfin.MainActivity;
 import com.example.myapplicationfin.R;
+import com.example.myapplicationfin.WebService.Asynchtask;
+import com.example.myapplicationfin.WebService.WebService;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import adapters.adpDispositive;
 import adapters.adpPrescription;
 import clases.DispositiveModel;
 import clases.PrescriptionModel;
 import clases.UserModel;
+
+import static clases.Encriptar.SHA1;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -34,15 +53,10 @@ import clases.UserModel;
  */
 public class fragment_prescription extends Fragment {
 
-    private DatabaseReference refDataBase;
-    private FirebaseFirestore refFireStore;
-
-    private DatabaseReference refDataUser;
-    private DatabaseReference refDataDevice;
-
-    private adpPrescription mAdapter;
-    private RecyclerView mRecyclerView;
-    private ArrayList<PrescriptionModel> mPrescriptionList = new ArrayList<>();
+    RecyclerView recyclerView;
+    DatabaseReference refDataBase;
+    public ArrayList<PrescriptionModel> dataPrescription = new ArrayList<>();
+    String id,typetheraphy,device,date,status,commentary;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -72,7 +86,6 @@ public class fragment_prescription extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,122 +94,50 @@ public class fragment_prescription extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_prescription, container, false);
-
-
-        refDataBase = FirebaseDatabase.getInstance().getReference();
-        refFireStore = FirebaseFirestore.getInstance();
-
-        refDataUser = FirebaseDatabase.getInstance().getReference();
-        refDataDevice = FirebaseDatabase.getInstance().getReference();
-
-        mRecyclerView = (RecyclerView) view.findViewById(R.id.rcvPrescription);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        getPrescriptionFromFireBase();
+        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        refDataBase = FirebaseDatabase.getInstance().getReference("prescription");
+        Prescription();
         return view;
     }
 
-    private void getPrescriptionFromFireBase(){
-        ArrayList<DispositiveModel> mDispositivesList  = getAllDevicesFromFireBase();
-        ArrayList<UserModel> mUserList = getAllUserFromFireBase();
-        refDataBase.child("prescription").addValueEventListener(new ValueEventListener() {
+
+    public void Prescription() {
+        String id_user = this.getArguments().getString("id");
+        Toast.makeText(getActivity(),id_user,Toast.LENGTH_LONG).show();
+
+        Query query = refDataBase.orderByChild("iduser").equalTo(id_user);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-                    mPrescriptionList.clear();
-                    for(DataSnapshot ds: snapshot.getChildren()){
-                        String ID = ds.getKey();
-                        String iduser = ds.child("iduser").getValue().toString();
-                        String iddevice = ds.child("iddevice").getValue().toString();
-                        String status = ds.child("status").getValue().toString();
-                        String typetherapy = ds.child("typetherapy").getValue().toString();
-                        String commentary = ds.child("commentary").getValue().toString();
-                        String date = ds.child("date").getValue().toString();
-                        String pacient = "";
-                        for(int a = 0; a < mUserList.size(); a++){
-                            UserModel userModel = mUserList.get(a);
-                            if(userModel.getId().equals(iduser)){
-                                pacient = userModel.getNames() + " " + userModel.getSurnames();
-                            }
-                        }
-                        String dispositivo = "";
-                        for(int a = 0; a < mDispositivesList.size(); a++){
-                            DispositiveModel dispositiveModel = mDispositivesList.get(a);
-                            if(dispositiveModel.getId().equals(iddevice)){
-                                dispositivo = dispositiveModel.getDispositive();
-                            }
-                        }
-                        mPrescriptionList.add(new PrescriptionModel(ID, pacient, dispositivo, status, typetherapy, commentary, date));
-                    }
-                    mAdapter = new adpPrescription(mPrescriptionList, R.layout.item_prescription);
-                    mRecyclerView.setAdapter(mAdapter);
+                for (DataSnapshot datasnapshot : snapshot.getChildren()) {
+                    id = datasnapshot.getKey();
+                    typetheraphy = datasnapshot.child("typetheraphy").getValue().toString();
+                    device = datasnapshot.child("iddevice").getValue().toString();
+                    date = datasnapshot.child("date").getValue().toString();
+                    status = datasnapshot.child("status").getValue().toString();
+                    commentary = datasnapshot.child("commentary").getValue().toString();
+                    dataPrescription.add(new PrescriptionModel(id,typetheraphy,device,date,status,commentary));
                 }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
-    private ArrayList<DispositiveModel>  getAllDevicesFromFireBase(){
-        ArrayList<DispositiveModel> mDispositivesList  = new ArrayList<>();
-        refDataDevice.child("device").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-                    mDispositivesList.clear();
-                    for(DataSnapshot ds: snapshot.getChildren()){
-                        String ID = ds.getKey();
-                        String MAC = ds.child("mac").getValue().toString();
-                        String dispositive = ds.child("device").getValue().toString();
-                        String state = ds.child("status").getValue().toString();
-                        String observation = ds.child("observation").getValue().toString();
-                        mDispositivesList.add(new DispositiveModel(ID, MAC, dispositive, state, observation));
-                    }
-                }
+                adpPrescription adapatorPrescription = new adpPrescription(dataPrescription,getContext());
+                recyclerView.setAdapter(adapatorPrescription);
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
+
         });
-        return mDispositivesList;
-    }
 
-    private ArrayList<UserModel>  getAllUserFromFireBase(){
-        ArrayList<UserModel> mUserList  = new ArrayList<>();
-        refDataUser.child("usuario").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.exists()){
-                    mUserList.clear();
-                    for(DataSnapshot ds: snapshot.getChildren()){
-                        String id = ds.getKey();
-                        String address = ds.child("address").getValue().toString();
-                        String birthdate = ds.child("birthdate").getValue().toString();
-                        String cid = ds.child("cid").getValue().toString();
-                        String email = ds.child("email").getValue().toString();
-                        String pass = ds.child("password").getValue().toString();
-                        String names = ds.child("names").getValue().toString();
-                        String surnames = ds.child("lastnames").getValue().toString();
-                        String phone = ds.child("phone").getValue().toString();
-                        String role = ds.child("role").getValue().toString();
-                        mUserList.add(new UserModel(id, address, birthdate, cid, email, pass, names, surnames, phone, role));
-                    }
-                }
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-        });
-        return mUserList;
+        int resId = R.anim.layout_animation_down_to_up;
+        LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getActivity(), resId);
+        recyclerView.setLayoutAnimation(animation);
+
     }
 }

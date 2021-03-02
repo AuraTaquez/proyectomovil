@@ -34,9 +34,9 @@ import clases.PrescriptionModel;
  * Use the {@link fragment_therapies#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class fragment_therapies extends Fragment implements Asynchtask {
+public class fragment_therapies extends Fragment {
 
-    RecyclerView recyclerView;
+
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -81,36 +81,9 @@ public class fragment_therapies extends Fragment implements Asynchtask {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_therapies, container, false);
-
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-
-        Map<String, String> datos = new HashMap<String, String>();
-        WebService ws= new WebService("https://reqres.in/api/users",
-                datos, getActivity(), fragment_therapies.this);
-        ws.execute("GET");
-
+        Toast.makeText(getActivity(),"HOLA A TODOS",Toast.LENGTH_LONG).show();
         return view;
     }
 
-    @Override
-    public void processFinish(String result) throws JSONException {
-        ArrayList<PrescriptionModel> lstPrescription = new ArrayList<PrescriptionModel> ();
-        try {
-            JSONObject JSONlista =  new JSONObject(result);
-            JSONArray JSONlistaPrescription=  JSONlista.getJSONArray("prescription");
-            lstPrescription = PrescriptionModel.JsonObjectsBuild(JSONlistaPrescription);
-            adpPrescription adapPrescription = new adpPrescription(lstPrescription,getContext());
-            int resId = R.anim.layout_animation_down_to_up;
-            LayoutAnimationController animation = AnimationUtils.loadLayoutAnimation(getContext(),
-                    resId);
-            recyclerView.setLayoutAnimation(animation);
-            recyclerView.setAdapter(adapPrescription);
-        }catch (JSONException e)
-        {
-            Toast.makeText(this.getContext(),e.getMessage(),Toast.LENGTH_LONG);
-        }
-    }
+
 }
